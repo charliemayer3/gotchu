@@ -2,8 +2,8 @@ import "./Menu.css";
 import React, { Component } from 'react'
 import { HamburgerArrow } from 'react-animated-burgers'
 import OverlayMenu from 'react-overlay-menu';
-// import MyMenu from './components/ui/MyMenu';
- 
+import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
+
 class Menu extends Component {
   constructor(props) {
     super(props);
@@ -29,14 +29,25 @@ class Menu extends Component {
           open={this.state.isOpen} 
           onClose={this.toggleMenu}
         >
+          
+      <Router>
         <span id="navItems" style={{color: 'white', textAlign: 'center', fontSize: '80px' }}>
         	<ul>
-        		<li>Sign In</li>
-        		<li>Contact</li>
-        		<li>Mission</li>
-        		<li>Something Else</li>
+            <Link to={"/login/"}>
+        		  <li>Sign In</li>
+            </Link>
+            <Link to={"/contact/"}>
+        		  <li>Contact</li>
+            </Link>
+            <Link to={"/mission/"}>
+        		  <li>Mission</li>
+            </Link>
+            <Link to={"/else/"}>
+        		  <li>Something Else</li>
+            </Link>
         	</ul>
         </span>
+      </Router>
         </OverlayMenu>
       </div>
     );
