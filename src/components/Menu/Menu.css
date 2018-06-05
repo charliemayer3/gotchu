@@ -15,8 +15,12 @@ a:hover {
 }
 
 .NUpTS {
-  background-color: transparent !important;
-  padding: 45px 45px !important;
+  position: fixed !important;
+  right: 0 !important;
+  top: 0 !important;
+  background-color: #5f4d8c !important;
+  border-bottom-left-radius: 20px !important;
+  padding: 25px 25px !important;
 /*  -webkit-transition: .45s cubic-bezier(.5, 1, .75, 1) !important;
   -moz-transition: .45s cubic-bezier(.5, 1, .75, 1) !important;
   transition: .45s cubic-bezier(.5, 1, .75, 1) !important;*/
