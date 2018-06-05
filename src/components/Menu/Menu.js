@@ -21,19 +21,33 @@ class Menu extends Component {
   render() {
     return (
       <div>
-        <HamburgerArrow isActive={this.state.isOpen} toggleButton={this.toggleMenu} buttonColor="#FFBC67" barColor="white" />
-        
+      	<div id="MenuButton">
+        	<HamburgerArrow isActive={this.state.isOpen} toggleButton={this.toggleMenu} buttonColor="#FFBC67" barColor="white" />
+        </div>
+
         <OverlayMenu 
           open={this.state.isOpen} 
           onClose={this.toggleMenu}
         >
-          <Router>
+          
+      <Router>
+        <span id="navItems" style={{color: 'white', textAlign: 'center', fontSize: '80px' }}>
+        	<ul>
             <Link to={"/login/"}>
-              <strong>
-                Login
-              </strong>
+        		  <li>Sign In</li>
             </Link>
-          </Router>
+            <Link to={"/contact/"}>
+        		  <li>Contact</li>
+            </Link>
+            <Link to={"/mission/"}>
+        		  <li>Mission</li>
+            </Link>
+            <Link to={"/else/"}>
+        		  <li>Something Else</li>
+            </Link>
+        	</ul>
+        </span>
+      </Router>
         </OverlayMenu>
       </div>
     );

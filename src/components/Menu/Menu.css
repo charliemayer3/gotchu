@@ -3,6 +3,32 @@ a:hover {
   /*background-color: purple;*/
 }
 
+#MenuButton {
+  width: 100vw;
+  text-align: right;
+  position: fixed;
+  z-index: 100;
+}
+
+#navItems ul {
+  list-style-type: none;
+}
+
+.NUpTS {
+  background-color: transparent !important;
+  padding: 25px 25px !important;
+}
+
+.overlay-menu__wrap {
+  width: 100vw;
+  position: relative;
+}
+
+.overlay-menu {
+  position: relative;
+  z-index: 99 !important;
+}
+
 .underlinedText {
   cursor: pointer;
   display: inline-block;
