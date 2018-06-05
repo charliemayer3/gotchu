@@ -1,7 +1,6 @@
 import "./Home.css";
 import React, { Component } from 'react';
 import Logo from '../../images/gotchuLogo.png';
-import OverlayMenu from 'react-overlay-menu';
 import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 
 class Home extends Component {
@@ -13,6 +12,7 @@ class Home extends Component {
  
   render() {
     return (
+
       <div className="homeBody">
 
         <div className="logoContainer">
