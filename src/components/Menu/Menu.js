@@ -1,9 +1,9 @@
-// import "./Menu.css";
+import "./Menu.css";
 import React, { Component } from 'react'
 import { HamburgerArrow } from 'react-animated-burgers'
 import OverlayMenu from 'react-overlay-menu';
-// import MyMenu from './components/ui/MyMenu';
- 
+import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
+
 class Menu extends Component {
   constructor(props) {
     super(props);
@@ -27,10 +27,13 @@ class Menu extends Component {
           open={this.state.isOpen} 
           onClose={this.toggleMenu}
         >
-        <span style={{color: 'white'}}>
-        HELLO!! l;kdsjf;lkdsaf;lkdsajf;lkdsajf
-          {/* <MyMenu /> */}
-        </span>
+          <Router>
+            <Link to={"/login/"}>
+              <strong>
+                Login
+              </strong>
+            </Link>
+          </Router>
         </OverlayMenu>
       </div>
     );
