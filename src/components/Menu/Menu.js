@@ -1,4 +1,4 @@
-// import "./Menu.css";
+import "./Menu.css";
 import React, { Component } from 'react'
 import { HamburgerArrow } from 'react-animated-burgers'
 import OverlayMenu from 'react-overlay-menu';
@@ -21,15 +21,21 @@ class Menu extends Component {
   render() {
     return (
       <div>
-        <HamburgerArrow isActive={this.state.isOpen} toggleButton={this.toggleMenu} buttonColor="#FFBC67" barColor="white" />
-        
+      	<div id="MenuButton">
+        	<HamburgerArrow isActive={this.state.isOpen} toggleButton={this.toggleMenu} buttonColor="#FFBC67" barColor="white" />
+        </div>
+
         <OverlayMenu 
           open={this.state.isOpen} 
           onClose={this.toggleMenu}
         >
-        <span style={{color: 'white'}}>
-        HELLO!! l;kdsjf;lkdsaf;lkdsajf;lkdsajf
-          {/* <MyMenu /> */}
+        <span id="navItems" style={{color: 'white', textAlign: 'center', fontSize: '80px' }}>
+        	<ul>
+        		<li>Sign In</li>
+        		<li>Contact</li>
+        		<li>Mission</li>
+        		<li>Something Else</li>
+        	</ul>
         </span>
         </OverlayMenu>
       </div>
