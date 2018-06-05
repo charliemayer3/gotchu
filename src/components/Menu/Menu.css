@@ -16,8 +16,17 @@ a:hover {
 
 .NUpTS {
   background-color: transparent !important;
-  padding: 25px 25px !important;
+  padding: 45px 45px !important;
+/*  -webkit-transition: .45s cubic-bezier(.5, 1, .75, 1) !important;
+  -moz-transition: .45s cubic-bezier(.5, 1, .75, 1) !important;
+  transition: .45s cubic-bezier(.5, 1, .75, 1) !important;*/
 }
+/*
+.NUpTS:focus {
+  -webkit-transform: rotateZ(90deg);
+  -moz-transform: rotateZ(90deg);   
+  transform: rotateZ(90deg);
+}*/
 
 .overlay-menu__wrap {
   width: 100vw;
