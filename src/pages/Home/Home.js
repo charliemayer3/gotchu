@@ -2,6 +2,7 @@ import "./Home.css";
 import React, { Component } from 'react';
 import Logo from '../../images/gotchuLogo.png';
 import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
+import Fade from 'react-reveal/Fade';
 
 class Home extends Component {
   constructor(props) {
@@ -16,13 +17,22 @@ class Home extends Component {
       <div className="homeBody">
 
         <div className="logoContainer">
-          <img id="logo" src={Logo} />
+          <Fade top>
+           <img id="logo" src={Logo} />
+          </Fade>
         </div>
 
       	<div id="welcomeText">
-          <h1>
-            gotchu
-          </h1>
+          <Fade bottom>
+            <h1>
+              gotchu
+            </h1>
+          </Fade>
+          <Fade bottom>
+            <h4>
+              "Simple, substantial social change."
+            </h4>
+          </Fade>
         </div>
 
       </div>
