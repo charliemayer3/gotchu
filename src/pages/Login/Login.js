@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Redirect } from 'react-router-dom'
-import { Button } from 'reactstrap';
+// import { Button } from 'reactstrap';
 import "./Login.css";
-import { Alert } from 'reactstrap';
+// import { Alert } from 'reactstrap';
 
 
 class Login extends Component {
@@ -82,17 +82,7 @@ class Login extends Component {
 						/>
 							<br />
 							<br />
-						<Button id="submitButton" onClick={this.handleSubmit}>Login</Button>
 					</form>
-
-					<div>
-						{this.state.alert ? (
-								<Alert color="danger" style={{ marginTop: "10px" }}>
-					        		Incorrect username or password.
-					      		</Alert>
-		      			) : ("")}
-      				</div>
-
 				</div>
 			)
 		}
