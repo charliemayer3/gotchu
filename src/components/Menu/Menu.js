@@ -34,14 +34,14 @@ class Menu extends Component {
         >
           <Router>
             <List>
-              <ListItem>
-                <Link onClick={this.forceUpdate} to={"/"}>
+              {/* <ListItem>
+               <Link onClick={this.forceUpdate} to={"/"}>
                   Home
                 </Link>
-              </ListItem>
+              </ListItem> */}
               <ListItem>
                 <Link onClick={this.forceUpdate} to={"/signIn/"}>
-                  Sign In
+                  Login
                 </Link>
               </ListItem>
               <ListItem>

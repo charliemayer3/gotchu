@@ -1,6 +1,17 @@
+.overlay-menu__wrap a {
+  color: white;
+  text-decoration: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient( to right, #3686A0, #3686A0 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: 100%;
+}
+
 a:hover {
   cursor: pointer;
-  /*background-color: purple;*/
+  transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
+  background-position: 0%;
 }
 
 #MenuButton {
@@ -35,6 +46,21 @@ a:hover {
 .overlay-menu__wrap {
   width: 100vw;
   position: relative;
+  text-align: center;
+  padding-top: 10%;
+  font-size: 10vh;
+  font-weight: 900;
+}
+
+.overlay-menu__wrap a {
+  text-decoration: none;
+  color: white !important;
+  font-family: 'Roboto Condensed';
+}
+
+.overlay-menu__wrap li {
+  padding: 20px;
+  letter-spacing: 5px;
 }
 
 .overlay-menu {
