@@ -6,20 +6,28 @@ import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 import UserPortal from "../../pages/UserPortal";
 import { Redirect } from 'react-router';
 import { List, ListItem } from "../List";
+import LoginModal from '../LoginModal';
 
 class Menu extends Component {
   constructor(props) {
     super(props);
     this.state = { 
       isOpen: false,
-      isActive: false
+      isActive: false,
+      visible: false
     };
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.toggleLoginModal = this.toggleLoginModal.bind(this);
   }
  
   toggleMenu() {
     this.setState({ isOpen: !this.state.isOpen });
   }
+
+  toggleLoginModal() {
+    this.setState({ visible: !this.state.visible });
+  }
+ 
  
   render() {
     return (
@@ -40,7 +48,7 @@ class Menu extends Component {
                 </Link>
               </ListItem> */}
               <ListItem>
-                <Link onClick={this.forceUpdate} to={"/signIn/"}>
+                <Link onClick={() => {this.setState({ visible: !this.state.visible }) }} to={"/signIn/"}>
                   Login
                 </Link>
               </ListItem>
@@ -62,6 +70,9 @@ class Menu extends Component {
             </List>
           </Router>
         </OverlayMenu>
+
+        <LoginModal menuVisibility={this.state.visible}/>
+
       </div>
     );
   }
