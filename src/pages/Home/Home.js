@@ -2,7 +2,7 @@ import "./Home.css";
 import React, { Component } from 'react';
 import Logo from '../../images/gotchuLogo.png';
 import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
-import Fade from 'react-reveal/Fade';
+import Fade from 'react-reveal/Fade'
 
 class Home extends Component {
   constructor(props) {
@@ -33,6 +33,14 @@ class Home extends Component {
               "Simple, substantial social change."
             </h4>
           </Fade>
+          <div className="loginButtons">
+            <Fade left>
+              <button>Donor Login</button>
+            </Fade>
+            <Fade right>
+              <button>Recipient Login</button>
+            </Fade>
+          </div>
         </div>
 
       </div>
