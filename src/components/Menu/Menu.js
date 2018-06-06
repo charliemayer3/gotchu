@@ -4,6 +4,8 @@ import { HamburgerArrow } from 'react-animated-burgers'
 import OverlayMenu from 'react-overlay-menu';
 import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 import UserPortal from "../../pages/UserPortal";
+import { Redirect } from 'react-router';
+import { List, ListItem } from "../List";
 
 class Menu extends Component {
   constructor(props) {
@@ -30,27 +32,34 @@ class Menu extends Component {
           open={this.state.isOpen} 
           onClose={this.toggleMenu}
         >
-          
           <Router>
-            <Switch>
-              <span id="navItems" style={{color: 'white', textAlign: 'center', fontSize: '80px' }}>
-                <ul>
-                  <Link to={"/login/"}>
-                    <li>Sign In</li>
-                  </Link>
-                  <Link to={"/contact/"}>
-                    <li>Contact</li>
-                  </Link>
-                  <Link to={"/mission/"}>
-                    <li>Mission</li>
-                  </Link>
-                  <Link to={"/user/"}>
-                    <li>Something Else</li>
-                  </Link>
-                </ul>
-              </span>
-            </Switch>
-
+            <List>
+              <ListItem>
+                <Link onClick={this.forceUpdate} to={"/"}>
+                  Home
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link onClick={this.forceUpdate} to={"/signIn/"}>
+                  Sign In
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link onClick={this.forceUpdate} to={"/contact/"}>
+                  Contact
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link onClick={this.forceUpdate} to={"/mission/"}>
+                  Mission
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link onClick={this.forceUpdate} to={"/user/"}>
+                  User Portal
+                </Link>
+              </ListItem>
+            </List>
           </Router>
         </OverlayMenu>
       </div>
