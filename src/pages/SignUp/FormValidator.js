@@ -32,7 +32,7 @@ class FormValidator extends Component {
     return;
   }
 
-  stop();
+
 
 
     // fieldValidationErrors.email = emailValid ? '' : ' is invalid';
