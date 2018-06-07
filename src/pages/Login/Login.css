@@ -1,5 +1,7 @@
 .LoginForm {
 	text-align: center;
+	margin-top: 15vh;
+	font-size: 30px;
 }
 
 .LoginForm input {
@@ -11,6 +13,7 @@
 	min-width: auto;
 	-webkit-transition: width .5s; /* Safari */
     transition: width .5s;
+    background-color: transparent;
 }
 
 .LoginForm input:focus {
