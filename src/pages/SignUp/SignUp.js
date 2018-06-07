@@ -20,7 +20,8 @@ class Signup extends Component {
 			password: '',
 			confirmPassword: '',
 			redirectTo: null,
-			alert: false
+			alert: false,
+			passwordAlert: false
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
 		this.handleChange = this.handleChange.bind(this)
@@ -34,31 +35,35 @@ class Signup extends Component {
 	handleSubmit(event) {
 		event.preventDefault()
 		console.log("click worked!");
-		// TODO - validate!
-		axios
-			.post('/auth/signup', {
-				first_name: this.state.brewery,
-				middle_name: this.state.breweryURL,
-				last_name: this.state.username,
-				country: this.state.country,
-				city: this.state.city,
-				postal_code: this.state.postal_code,
-				phone_number: this.state.phone_number,
-				email: this.state.email,
-				password: this.state.password
-			})
-			.then(response => {
-				console.log(response)
-				if (!response.data.errmsg) {
-					console.log('youre good')
-					console.log(response.data)
-					this.setState({
-			            alert: true
-			          })
-				} else {
-					console.log('duplicate')
-				}
-			})
+		if (this.state.password === this.state.confirmPassword) {
+			this.setState({alert: true})
+			axios
+				.post('/auth/signup', {
+					first_name: this.state.brewery,
+					middle_name: this.state.breweryURL,
+					last_name: this.state.username,
+					country: this.state.country,
+					city: this.state.city,
+					postal_code: this.state.postal_code,
+					phone_number: this.state.phone_number,
+					email: this.state.email,
+					password: this.state.password
+				})
+				.then(response => {
+					console.log(response)
+					if (!response.data.errmsg) {
+						console.log('youre good')
+						console.log(response.data)
+						this.setState({
+				            alert: true
+				          })
+					} else {
+						console.log('duplicate')
+					}
+				})
+		} else {
+			this.setState({passwordAlert: true})
+		}
 	}
 	render() {
 		if (this.state.redirectTo) {
@@ -75,6 +80,7 @@ class Signup extends Component {
 					value={this.state.first_name}
 					placeholder=". . ."
 					onChange={this.handleChange}
+					required
 				/>
 					<br />
 					<br />
@@ -108,6 +114,7 @@ class Signup extends Component {
 					value={this.state.country}
 					placeholder=". . ."
 					onChange={this.handleChange}
+					required
 				/>
 					<br />
 					<br />
@@ -119,6 +126,7 @@ class Signup extends Component {
 					value={this.state.city}
 					placeholder=". . ."
 					onChange={this.handleChange}
+					required
 				/>
 					<br />
 					<br />
@@ -130,6 +138,7 @@ class Signup extends Component {
 					value={this.state.postal_code}
 					placeholder=". . ."
 					onChange={this.handleChange}
+					required
 				/>
 					<br />
 					<br />
@@ -141,17 +150,19 @@ class Signup extends Component {
 					value={this.state.phone_number}
 					placeholder=". . ."
 					onChange={this.handleChange}
+					required
 				/>
 					<br />
 					<br />
 				<label htmlFor="email">Email</label>
 					<br />
 				<input
-					type="text"
+					type="email"
 					name="email"
 					value={this.state.email}
 					placeholder=". . ."
 					onChange={this.handleChange}
+					required
 				/>
 					<br />
 					<br />
@@ -163,6 +174,7 @@ class Signup extends Component {
 					value={this.state.password}
 					placeholder=". . ."
 					onChange={this.handleChange}
+					required
 				/>
 					<br />
 					<br />
@@ -174,19 +186,31 @@ class Signup extends Component {
 					value={this.state.confirmPassword}
 					placeholder=". . ."
 					onChange={this.handleChange}
+					required
 				/>
 					<br />
 					<br />
 				<Button id="signUpSubmit-button" onClick={this.handleSubmit}>Sign up</Button>
 			</div>
 
+			{/* Currently non working create account success alert */}
 			<div>
 				{this.state.alert ? (
-						<Alert color="success" style={{ marginTop: "10px" }}>
-			        		You have successfully created an account! <a href="#" className="alert-link">Login here!</a>
-			      		</Alert>
+					<Alert color="success" style={{ marginTop: "10px" }}>
+		        		You have successfully created an account! <a href="#" className="alert-link">Login here!</a>
+		      		</Alert>
       			) : ("")}
       		</div>
+
+      		{/* Currently non working passwords don't match alert */}
+      		<div>
+				{this.state.passwordAlert ? (
+					<Alert color="danger" style={{ marginTop: "10px" }}>
+		        		Incorrect username or password.
+		      		</Alert>
+	  			) : ("")}
+			</div>
+
       	</div>
 		)
 	}

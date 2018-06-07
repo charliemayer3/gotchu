@@ -29,7 +29,6 @@ class Menu extends Component {
     this.setState({ visible: !this.state.visible });
   }
  
- 
   render() {
     return (
       <div>
