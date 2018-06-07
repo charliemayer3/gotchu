@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import "./SignUp.css";
 import { Alert } from 'reactstrap';
+import FormValidator from './FormValidator.js';
 
 class Signup extends Component {
 	constructor() {
@@ -21,7 +22,8 @@ class Signup extends Component {
 			confirmPassword: '',
 			redirectTo: null,
 			alert: false,
-			passwordAlert: false
+			passwordAlert: false,
+			submitClicked: false
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
 		this.handleChange = this.handleChange.bind(this)
@@ -33,6 +35,10 @@ class Signup extends Component {
 	}
 
 	handleSubmit(event) {
+		if (this.state.password === this.state.confirmPassword) {
+			this.setState({passwordAlert: true})
+		}
+		this.setState({ submitClicked: true})
 		event.preventDefault()
 		console.log("click worked!");
 		if (this.state.password === this.state.confirmPassword) {
@@ -66,9 +72,8 @@ class Signup extends Component {
 		}
 	}
 	render() {
-		if (this.state.redirectTo) {
-			return <Redirect to={{ pathname: this.state.redirectTo }} />
-		}
+		console.log(this.state)
+		
 		return (
 		<div>
 			<div className="SignUpForm">
@@ -80,7 +85,7 @@ class Signup extends Component {
 					value={this.state.first_name}
 					placeholder=". . ."
 					onChange={this.handleChange}
-					required
+					required="required"
 				/>
 					<br />
 					<br />
@@ -193,7 +198,7 @@ class Signup extends Component {
 				<Button id="signUpSubmit-button" onClick={this.handleSubmit}>Sign up</Button>
 			</div>
 
-			{/* Currently non working create account success alert */}
+			{/*
 			<div>
 				{this.state.alert ? (
 					<Alert color="success" style={{ marginTop: "10px" }}>
@@ -202,14 +207,17 @@ class Signup extends Component {
       			) : ("")}
       		</div>
 
-      		{/* Currently non working passwords don't match alert */}
       		<div>
 				{this.state.passwordAlert ? (
 					<Alert color="danger" style={{ marginTop: "10px" }}>
-		        		Incorrect username or password.
+		        		Your passwords do not match.
 		      		</Alert>
 	  			) : ("")}
 			</div>
+			*/}
+			{this.state.submitClicked ? (
+				<FormValidator state={this.state}/>
+			) : ("")}
 
       	</div>
 		)
