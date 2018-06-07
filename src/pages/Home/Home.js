@@ -2,7 +2,7 @@ import "./Home.css";
 import React, { Component } from 'react';
 import Logo from '../../images/gotchuLogo.png';
 import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
-import Fade from 'react-reveal/Fade'
+import Fade from 'react-reveal/Fade';
 
 class Home extends Component {
   constructor(props) {
