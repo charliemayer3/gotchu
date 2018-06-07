@@ -1,6 +1,7 @@
 #loginCloseBtn {
-	background-color: red;
+	background-color: #67a0b4;
 	padding: 20px;
 	color: white;
-	
+	border-radius: 10px;
+	margin: auto;
 }
