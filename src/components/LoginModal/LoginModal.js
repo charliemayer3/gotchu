@@ -6,13 +6,15 @@ import UserPortal from '../../pages/UserPortal';
 import { Redirect } from 'react-router';
 import { List, ListItem } from "../List";
 import Login from '../../pages/Login';
+import SignUp from '../../pages/SignUp';
 import LoginCloseBtn from '../LoginCloseBtn';
 
 class LoginModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible : this.props.menuVisiblity
+      visible : this.props.menuVisiblity,
+      signup: false
     };
     this.toggleLoginModal = this.toggleLoginModal.bind(this);
   }
@@ -33,7 +35,19 @@ class LoginModal extends Component {
     return (
       <div>
         <div id="loginModal" className={visibility}>
-          <Login/>
+          <h1 id="loginLink" onClick={() => {this.setState({ signUp: false }) }}>
+            Login
+          </h1>
+          <h1 id="signUpLink" onClick={() => {this.setState({ signUp: true }) }}>
+            Sign Up
+          </h1>
+          <br />
+          <br />
+          {!this.state.signUp ? (
+            <Login/>
+          ) : (
+            <SignUp/>
+          )}
           <LoginCloseBtn onClick={this.toggleLoginModal}/>
         </div>
       </div>
