@@ -5,7 +5,7 @@ class LoginCloseBtn extends Component {
 
   render() {
     return (
-      <button id="loginCloseBtn" onClick={this.props.toggleLoginModal}>
+      <button id="loginCloseBtn" onClick={alert("Hello!")}>
       	CLICK HERE TO CLOSE
       </button>
     );

@@ -23,12 +23,13 @@ class Menu extends Component {
  
   toggleMenu() {
     this.setState({ isOpen: !this.state.isOpen });
+    console.log("TM click worked")
   }
 
   toggleLoginModal() {
     this.setState({ visible: !this.state.visible });
+    console.log("click worked")
   }
- 
  
   render() {
     return (
@@ -49,7 +50,7 @@ class Menu extends Component {
                 </Link>
               </ListItem> */}
               <ListItem>
-                <Link onClick={() => {this.setState({ visible: !this.state.visible }) }} to={"/signIn/"}>
+                <Link onClick={() => {this.setState({ visible: !this.state.visible, isOpen: !this.state.isOpen }) }} to={"/"}>
                   Login
                 </Link>
               </ListItem>
@@ -72,9 +73,10 @@ class Menu extends Component {
           </Router>
         </OverlayMenu>
 
-        <LoginModal menuVisibility={this.state.visible}>
+        <LoginModal menuVisibility={this.state.visible} toggleLoginModal={this.toggleLoginModal}>
+          
         </LoginModal>
-        <LoginCloseBtn onClick={() => {this.setState({ visible: this.state.visible }) }}/>
+        {/*<LoginCloseBtn onClick={this.toggleLoginModal}/>*/}
 
       </div>
     );
