@@ -12,13 +12,19 @@ class Menu extends Component {
     super(props);
     this.state = { 
       isOpen: false,
-      isActive: false
+      isActive: false,
+      loginOpen: false
     };
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.toggleMenu2 = this.toggleMenu2.bind(this);
   }
  
   toggleMenu() {
     this.setState({ isOpen: !this.state.isOpen });
+  }
+
+  toggleMenu2() {
+    this.setState({ loginOpen: !this.state.loginOpen });
   }
  
   render() {
@@ -40,9 +46,13 @@ class Menu extends Component {
                 </Link>
               </ListItem> */}
               <ListItem>
-                <Link onClick={this.forceUpdate} to={"/signIn/"}>
+                <p style={{color: 'white'}} onClick={this.toggleMenu2}>
                   Login
-                </Link>
+                  <OverlayMenu style={{color: 'white'}} 
+                    open={this.state.loginOpen} 
+                    onClose={this.toggleMenu2}
+                  >HELLO THERE!!</OverlayMenu>
+                </p>
               </ListItem>
               <ListItem>
                 <Link onClick={this.forceUpdate} to={"/contact/"}>
