@@ -7,6 +7,7 @@ import UserPortal from "../../pages/UserPortal";
 import { Redirect } from 'react-router';
 import { List, ListItem } from "../List";
 import LoginModal from '../LoginModal';
+import LoginCloseBtn from '../LoginCloseBtn';
 
 class Menu extends Component {
   constructor(props) {
@@ -71,7 +72,9 @@ class Menu extends Component {
           </Router>
         </OverlayMenu>
 
-        <LoginModal menuVisibility={this.state.visible}/>
+        <LoginModal menuVisibility={this.state.visible}>
+        </LoginModal>
+        <LoginCloseBtn onClick={() => {this.setState({ visible: this.state.visible }) }}/>
 
       </div>
     );

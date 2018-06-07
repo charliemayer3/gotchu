@@ -6,6 +6,7 @@ import UserPortal from '../../pages/UserPortal';
 import { Redirect } from 'react-router';
 import { List, ListItem } from "../List";
 import Login from '../../pages/Login';
+import LoginCloseBtn from '../LoginCloseBtn';
 
 class LoginModal extends Component {
   constructor(props) {
@@ -13,18 +14,27 @@ class LoginModal extends Component {
     this.state = {
       visible : this.props.menuVisiblity
     };
+    this.toggleLoginModal = this.toggleLoginModal.bind(this);
   }
+
+  toggleLoginModal() {
+    this.setState({ visible: !this.props.menuVisibility });
+  }
+ 
    render() {
     var visibility = "hide";
  
-    if (this.props.menuVisibility) {
+    if (this.props.menuVisibility) {   {/* why doesn't putting this.state.visible do the same thing?? If worked, we could use this.state.visible for closing */}
       visibility = "show";
+    } else {
+      visibility = "hide";
     }
 
     return (
       <div>
         <div id="loginModal" className={visibility}>
-          <Login />
+          <Login/>
+          <LoginCloseBtn onClick={this.toggleLoginModal}/>
         </div>
       </div>
     );

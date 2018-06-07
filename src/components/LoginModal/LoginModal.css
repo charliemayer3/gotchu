@@ -1,21 +1,26 @@
 #loginModal {
-  width: 100vw;
+  width: 50vw;
   height: 100vh;
-  background-color: #FFE600;
+  background-color: #2f2f2f;
+  color: white;
   position: fixed;
   top: 0;
   left: 0;
-  transition: transform .3s
-              cubic-bezier(0, .52, 0, 1);
+  margin-left: 25vw;
+  -webkit-transition: all 500ms cubic-bezier(0.020, 1, 0.770, 0.760); /* older webkit */
+  -webkit-transition: all 500ms cubic-bezier(0.020, 1.445, 0.770, 0.760); 
+  -moz-transition: all 500ms cubic-bezier(0.020, 1.445, 0.770, 0.760); 
+  -o-transition: all 500ms cubic-bezier(0.020, 1.445, 0.770, 0.760); 
+  transition: all 500ms cubic-bezier(0.020, 1.445, 0.770, 0.760); /* custom */
   overflow: scroll;
   z-index: 1000;
 }
 
 #loginModal.hide {
-  transform: translate3d(-100vw, 0, 0);
+  transform: translate3d(0, -100vh, 0);
 }
 
 #loginModal.show {
-  transform: translate3d(0vw, 0, 0);
+  transform: translate3d(0, 0vh, 0);
   overflow: hidden;
 }
