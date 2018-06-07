@@ -50,11 +50,7 @@ class Menu extends Component {
               <ListItem>
                 <Link onClick={() => {this.setState({ visible: !this.state.visible }) }} to={"/signIn/"}>
                   Login
-                  <OverlayMenu style={{color: 'white'}} 
-                    open={this.state.loginOpen} 
-                    onClose={this.toggleMenu2}
-                  >HELLO THERE!!</OverlayMenu>
-                </p>
+                </Link>
               </ListItem>
               <ListItem>
                 <Link onClick={this.forceUpdate} to={"/contact/"}>
