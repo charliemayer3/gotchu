@@ -101,11 +101,6 @@ a:hover {
   width: 100%;
 }
 
-
-#signUpLink {
-  color: white;
-}
-
 .navbar {
   margin-bottom: 0px;
   height: 100px;
@@ -117,10 +112,6 @@ a:hover {
   position: absolute;
   z-index: 100;
   width: 100%;
-}
-
-#signUpLink {
-  padding: 20px 5px;
 }
 
 .modal-title {

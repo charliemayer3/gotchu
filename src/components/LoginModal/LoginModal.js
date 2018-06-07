@@ -14,7 +14,7 @@ class LoginModal extends Component {
     super(props);
     this.state = {
       visible : this.props.menuVisiblity,
-      signup: false
+      signUp: false
     };
     this.toggleLoginModal = this.toggleLoginModal.bind(this);
   }
@@ -36,12 +36,20 @@ class LoginModal extends Component {
     return (
       <div>
         <div id="loginModal" className={visibility}>
-          <h1 id="loginLink" onClick={() => {this.setState({ signUp: false }) }}>
-            Login
-          </h1>
-          <h1 id="signUpLink" onClick={() => {this.setState({ signUp: true }) }}>
-            Sign Up
-          </h1>
+          <div className="headerText">
+
+            <span onClick={() => {this.setState({ signUp: false }) }} className={ this.state.signUp ? "tabColor" : "focusedTab"}>
+              <h1 id="loginLink">
+                Login
+              </h1>
+            </span>
+            
+            <span onClick={() => {this.setState({ signUp: true }) }} className={ !this.state.signUp ? "tabColor" : "focusedTab"}>
+              <h1 id="signUpLink">
+                Sign Up
+              </h1>
+            </span>
+          </div>
           <br />
           <br />
           {!this.state.signUp ? (
