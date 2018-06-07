@@ -22,6 +22,7 @@ class LoginModal extends Component {
   }
  
    render() {
+    console.log(this.props)
     var visibility = "hide";
  
     if (this.props.menuVisibility) {   {/* why doesn't putting this.state.visible do the same thing?? If worked, we could use this.state.visible for closing */}
@@ -34,7 +35,9 @@ class LoginModal extends Component {
       <div>
         <div id="loginModal" className={visibility}>
           <Login/>
-          <LoginCloseBtn onClick={this.toggleLoginModal}/>
+          <button id="loginCloseBtn" onClick={() => {this.props.toggleLoginModal()}}>
+          CLICK HERE TO CLOSE
+          </button>
         </div>
       </div>
     );
