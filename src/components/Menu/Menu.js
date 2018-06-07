@@ -15,7 +15,8 @@ class Menu extends Component {
     this.state = { 
       isOpen: false,
       isActive: false,
-      visible: false
+      visible: false,
+      blackOverlay: false
     };
     this.toggleMenu = this.toggleMenu.bind(this);
     this.toggleLoginModal = this.toggleLoginModal.bind(this);
@@ -28,6 +29,7 @@ class Menu extends Component {
 
   toggleLoginModal() {
     this.setState({ visible: !this.state.visible });
+    this.setState({ blackOverlay: !this.state.blackOverlay });
     console.log("click worked")
   }
  
@@ -36,6 +38,9 @@ class Menu extends Component {
       <div>
       	<div id="MenuButton">
         	<HamburgerArrow isActive={this.state.isOpen} toggleButton={this.toggleMenu} buttonColor="#FFBC67" barColor="white" />
+        </div>
+
+        <div id="blackOverlay" className={ this.state.blackOverlay ? "showBlack" : ""}>
         </div>
 
         <OverlayMenu 
@@ -50,7 +55,7 @@ class Menu extends Component {
                 </Link>
               </ListItem> */}
               <ListItem>
-                <Link onClick={() => {this.setState({ visible: !this.state.visible, isOpen: !this.state.isOpen }) }} to={"/"}>
+                <Link onClick={() => {this.setState({ visible: !this.state.visible, blackOverlay: true }) }} to={"/"}>
                   Login
                 </Link>
               </ListItem>
@@ -73,7 +78,7 @@ class Menu extends Component {
           </Router>
         </OverlayMenu>
 
-        <LoginModal menuVisibility={this.state.visible} toggleLoginModal={this.toggleLoginModal}>
+        <LoginModal menuVisibility={this.state.visible} toggleLoginModal={this.toggleLoginModal} toggleBlack={this.toggleBlack}>
           
         </LoginModal>
         {/*<LoginCloseBtn onClick={this.toggleLoginModal}/>*/}

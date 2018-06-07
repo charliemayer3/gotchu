@@ -8,6 +8,7 @@ import { List, ListItem } from "../List";
 import Login from '../../pages/Login';
 import SignUp from '../../pages/SignUp';
 import LoginCloseBtn from '../LoginCloseBtn';
+import X from '../../images/whiteX.png';
 
 class LoginModal extends Component {
   constructor(props) {
@@ -50,16 +51,17 @@ class LoginModal extends Component {
               </h1>
             </span>
           </div>
-          <br />
-          <br />
+
+          <span style={{ width: '100%', textAlign: 'right', display: 'inline-block' }}>
+            <img id="closeX" src={X} onClick={() => {this.props.toggleLoginModal()} }/>
+          </span>
+
           {!this.state.signUp ? (
             <Login/>
           ) : (
             <SignUp/>
           )}
-          <button id="loginCloseBtn" onClick={() => {this.props.toggleLoginModal()}}>
-          CLICK HERE TO CLOSE
-          </button>
+
         </div>
       </div>
     );

@@ -8,13 +8,12 @@
   top: 0;
   left: 0;
   margin-left: 25vw;
-  -webkit-transition: all 500ms cubic-bezier(0.020, 1, 0.770, 0.760); /* older webkit */
-  -webkit-transition: all 500ms cubic-bezier(0.020, 1.445, 0.770, 0.760); 
-  -moz-transition: all 500ms cubic-bezier(0.020, 1.445, 0.770, 0.760); 
-  -o-transition: all 500ms cubic-bezier(0.020, 1.445, 0.770, 0.760); 
-  transition: all 500ms cubic-bezier(0.020, 1.445, 0.770, 0.760); /* custom */
+  -webkit-transition: all 500ms cubic-bezier(1.000, 0.085, 0.640, 0.810); 
+   -moz-transition: all 500ms cubic-bezier(1.000, 0.085, 0.640, 0.810); 
+     -o-transition: all 500ms cubic-bezier(1.000, 0.085, 0.640, 0.810); 
+        transition: all 500ms cubic-bezier(1.000, 0.085, 0.640, 0.810); /* custom */
   overflow: scroll;
-  z-index: 1000;
+  z-index: 100;
 }
 
 #loginModal.hide {
@@ -29,6 +28,7 @@
 .headerText {
   width: 100%;
   text-align: center;
+  display: inline-block;
 }
 
 #loginLink {
@@ -61,6 +61,25 @@
 
 }
 
+#closeX {
+  width: 3%;
+  margin-right: 1.5vw;
+  margin-top: 6vh;
+  transition: all .25s cubic-bezier(0.000, 0.000, 0.230, 1);
+}
+
+#closeX:hover {
+  cursor: pointer;
+  -webkit-transform: rotate(90deg); /* Safari */
+  transform: rotate(90deg);
+}
+
+
+.buttonPosition {
+  width: 100%;
+  text-align: center;
+}
+
 .headerText #signUpLink {
   color: white;
   text-decoration: none;
@@ -83,12 +102,12 @@
 
 #signUpLink:hover {
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
+  transition: all 1s cubic-bezier(0.000, 0.000, 0.230, 1);
   background-position: 0%;
 }
 
 #loginLink:hover {
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
+  transition: all 1s cubic-bezier(0.000, 0.000, 0.230, 1);
   background-position: 0%;
 }
