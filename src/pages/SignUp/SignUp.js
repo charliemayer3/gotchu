@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import "./SignUp.css";
 import { Alert } from 'reactstrap';
-import FormValidator from './FormValidator.js';
+// import FormValidator from './FormValidator.js';
 
 class Signup extends Component {
 	constructor() {
@@ -22,7 +22,8 @@ class Signup extends Component {
 			confirmPassword: '',
 			redirectTo: null,
 			alert: false,
-			passwordAlert: false,
+			passwordBadMatch: false,
+			emailError: false,
 			submitClicked: false
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
@@ -35,14 +36,21 @@ class Signup extends Component {
 	}
 
 	handleSubmit(event) {
-		if (this.state.password === this.state.confirmPassword) {
-			this.setState({passwordAlert: true})
+		if (this.state.password != this.state.confirmPassword) {
+			this.setState({passwordBadMatch: true})
+		} else {
+			this.setState({passwordBadMatch: false})
+		}
+		if (!this.state.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
+			this.setState({emailError: true})
+			console.log("Please enter a valid email address")
+		} else {
+			this.setState({emailError: false})
+			console.log("Email address valid")
 		}
 		this.setState({ submitClicked: true})
-		event.preventDefault()
-		console.log("click worked!");
-		if (this.state.password === this.state.confirmPassword) {
-			this.setState({alert: true})
+		if (!this.state.emailError && !this.state.passwordBadMatch && this.state.first_name != '' && this.state.country != '' && this.state.city != '' && this.state.postal_code != '' && this.state.phone_number != '') {
+			console.log("email, password, and first name are good")
 			axios
 				.post('/auth/signup', {
 					first_name: this.state.brewery,
@@ -67,10 +75,10 @@ class Signup extends Component {
 						console.log('duplicate')
 					}
 				})
-		} else {
-			this.setState({passwordAlert: true})
 		}
+		event.preventDefault()
 	}
+		
 	render() {
 		console.log(this.state)
 		
@@ -111,7 +119,7 @@ class Signup extends Component {
 				/>
 					<br />
 					<br />
-				<label htmlFor="country">County</label>
+				<label htmlFor="country">Country</label>
 					<br />
 				<input
 					type="text"
@@ -208,17 +216,17 @@ class Signup extends Component {
       		</div>
 
       		<div>
-				{this.state.passwordAlert ? (
+				{this.state.passwordMatch ? (
 					<Alert color="danger" style={{ marginTop: "10px" }}>
 		        		Your passwords do not match.
 		      		</Alert>
 	  			) : ("")}
 			</div>
-			*/}
+			
 			{this.state.submitClicked ? (
 				<FormValidator state={this.state}/>
 			) : ("")}
-
+			*/}
       	</div>
 		)
 	}

@@ -1,4 +1,5 @@
-{
+{ 
+  "homepage": "https://charliemayer3.github.io/gotchu/",
   "name": "gotchu",
   "version": "0.1.0",
   "private": true,

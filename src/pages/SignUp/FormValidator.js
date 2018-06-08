@@ -21,10 +21,9 @@ class FormValidator extends Component {
   validateField() {
     console.log("are you working?")
     // let fieldValidationErrors = this.state.formErrors;
-  if (this.state.email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+  if (this.props.state.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
     this.setState({emailValid: true})
     console.log("IF")
-    return;
   }
   else {
     alert("You have entered an invalid email address!");
@@ -62,17 +61,17 @@ class FormValidator extends Component {
     //               }, this.validateForm);
   }
 
-  componentWillMount() {
-    // this.validateField();
+  componentDidUpdate() {
+    this.validateField();
   };
 
 
   render () {
     console.log(this.props.state.passwordAlert)
-    this.validateField()
+    // this.validateField()
     return (
       <div>
-      
+    
       <div>
         {!this.state.emailValid ? (
           <Alert color="success" style={{ marginTop: "10px" }}>
