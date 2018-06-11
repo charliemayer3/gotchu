@@ -11,7 +11,27 @@ class UserPortal extends Component {
  
   render() {
     return (
-    	<h1>User Portal!!</h1>
+      <div className="userPortalContainer">
+        <div className='welcomeHeader'>
+          <h1>Hello, (user's first name)!</h1>
+          <span className='userInfo'>
+            <h3>
+              Your latest contributions have helped [enter demographic here]!
+            </h3>
+            <h3>
+              [total contributions]
+            </h3>
+          </span>
+        </div>
+
+        <div className='analyticsContainer'>
+          <div className='pieChart'>
+          </div>
+
+          <div className='userGraph'>
+          </div>
+        </div>
+      </div>
     );
   }
 }
