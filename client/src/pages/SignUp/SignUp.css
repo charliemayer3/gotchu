@@ -1,5 +1,8 @@
 .SignUpForm {
-	text-align: center;
+	width: 95%;
+	height: auto;
+	display: block;
+	padding: 20px;
 }
 
 .SignUpForm input {
@@ -7,18 +10,45 @@
 	border: none;
 	border-bottom: solid;
 	border-width: 2px;
-	width: 100px;
+	background-color: transparent;
+	font-size: 18px;
+	width: 200px;
 	min-width: auto;
 	-webkit-transition: width .5s; /* Safari */
     transition: width .5s;
+    margin-top: 5px;
 }
 
 .SignUpForm input:focus {
 	border: none;
 	border-bottom: solid;
-	border-width: 2px;
-	width: 200px;
+	border-width: 3px;
 	max-width: 300px;
+}
+
+.SignUpForm label {
+	font-size: 20px;
+}
+
+.SignUpForm label:hover {
+	color: #dadada;
+}
+
+.leftColumn {
+	position: relative;
+	display: inline-block;
+	top: 10%;
+	margin-left: 15%;
+	text-align: center;
+}
+
+.rightColumn {
+	position: relative;
+	display: inline-block;
+	float: right;
+	top: 10%;
+	margin-right: 15%;
+	text-align: center;
 }
 
 textarea:hover, 
@@ -37,6 +67,21 @@ label:focus,
     outline:0px !important;
 }
 
+.buttonContainer{
+	width: 100%;
+	display: block;
+	clear: both;
+	margin-top: 5%;
+	text-align: center;
+}
+
 #signUpSubmit-button {
-	background-color: #002968;
+	background-color: #3d88a3;
+	position: relative;
+	color: white !important;
+	border: none;
+	font-size: 14px;
+	padding: 10px;
+	-webkit-box-shadow: 0 0 50px -10px #000000;
+  	box-shadow: 0 0 10px -3px #000000;
 }
