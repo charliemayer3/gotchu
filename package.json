@@ -1,11 +1,15 @@
 {
-  "homepage": "https://charliemayer3.github.io/gotchu/",
   "name": "gotchu",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^2.0.1",
+    "express-session": "^1.15.6",
     "jquery": "^3.3.1",
+    "mongoose": "^5.1.4",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "react": "^16.4.0",
     "react-animated-burgers": "^1.1.0",
     "react-dom": "^16.4.0",
@@ -17,10 +21,19 @@
     "reactstrap": "^6.1.0",
     "serve": "^8.1.2"
   },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.11.0"
+  },
+  "main": "server.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "server": "node server.js",
+    "client": "node scripts/start-client.js",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "build": "node scripts/build.js",
+    "seed": "node scripts/seedDB.js",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "installDeps": "yarn && cd client && yarn"
   }
 }
