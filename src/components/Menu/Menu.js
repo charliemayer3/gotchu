@@ -8,6 +8,7 @@ import { Redirect } from 'react-router';
 import { List, ListItem } from "../List";
 import LoginModal from '../LoginModal';
 import LoginCloseBtn from '../LoginCloseBtn';
+import Footer from '../Footer';
 
 class Menu extends Component {
   constructor(props) {
@@ -16,14 +17,15 @@ class Menu extends Component {
       isOpen: false,
       isActive: false,
       visible: false,
-      blackOverlay: false
+      blackOverlay: false,
+      social: false
     };
     this.toggleMenu = this.toggleMenu.bind(this);
     this.toggleLoginModal = this.toggleLoginModal.bind(this);
   }
  
   toggleMenu() {
-    this.setState({ isOpen: !this.state.isOpen });
+    this.setState({ isOpen: !this.state.isOpen, social: !this.state.social });
     console.log("TM click worked")
   }
 
@@ -56,24 +58,28 @@ class Menu extends Component {
               </ListItem> */}
               <ListItem>
                 <Link onClick={() => {this.setState({ visible: !this.state.visible, blackOverlay: true }) }} to={"/"}>
-                  Login
+                  Login / <br /> &nbsp; Signup
                 </Link>
               </ListItem>
+                <hr />
               <ListItem>
                 <Link onClick={this.forceUpdate} to={"/contact/"}>
-                  Contact
+                  The <br /> &nbsp; Crisis
                 </Link>
               </ListItem>
+                <hr />
               <ListItem>
                 <Link onClick={this.forceUpdate} to={"/mission/"}>
-                  Mission
+                  The <br /> &nbsp; Mission
                 </Link>
               </ListItem>
+                <hr />
               <ListItem>
                 <Link onClick={this.forceUpdate} to={"/user/"}>
-                  User Portal
+                  The <br /> &nbsp; Team
                 </Link>
               </ListItem>
+                <hr />
             </List>
           </Router>
         </OverlayMenu>
@@ -81,7 +87,12 @@ class Menu extends Component {
         <LoginModal menuVisibility={this.state.visible} toggleLoginModal={this.toggleLoginModal} toggleBlack={this.toggleBlack}>
           
         </LoginModal>
-        {/*<LoginCloseBtn onClick={this.toggleLoginModal}/>*/}
+
+        {this.state.social ? (
+          <Footer footerVisibility={this.state.social} toggleSocialModal={this.toggleSocialModal} /> 
+        ) : (
+          ""
+        )}
 
       </div>
     );
