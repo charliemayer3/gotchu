@@ -1,16 +1,16 @@
 const router = require("express").Router();
-const breweriesController = require("../../controllers/breweriesController");
+const controller = require("../../controllers/controller");
 
 // Matches with "/api/breweries"
 router.route("/")
-  .get(breweriesController.findAll)
-  .post(breweriesController.create);
+  .get(controller.findAll)
+  .post(controller.create);
 
 // Matches with "/api/breweries/:id" 
 router
   .route("/:breweryURL")
-  .get(breweriesController.findById)
-  .post(breweriesController.update)
-  .delete(breweriesController.remove)
+  .get(controller.findById)
+  .post(controller.update)
+  .delete(controller.remove)
 
 module.exports = router;
