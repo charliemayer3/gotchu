@@ -75,7 +75,7 @@ class Menu extends Component {
               </ListItem>
                 <hr />
               <ListItem>
-                <Link onClick={this.forceUpdate} to={"/user/"}>
+                <Link onClick={this.forceUpdate} to={"/team/"}>
                   The <br /> &nbsp; Team
                 </Link>
               </ListItem>
