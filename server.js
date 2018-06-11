@@ -28,7 +28,7 @@ app.use(routes);
 mongoose.Promise = global.Promise
 let MONGO_URL
 
-mongoose.connect("mongodb://heroku_1zh96hjn:8ein2g5l10u4ctrrhlj7euo0kh@ds127129.mlab.com:27129/heroku_1zh96hjn");
+mongoose.connect("mongodb://heroku_nfz1ln3n:d1gds9nj8o07pa70rhl36lla7g@ds119476.mlab.com:19476/heroku_nfz1ln3n");
 var dbConnection = mongoose.connection
 
 app.use(
