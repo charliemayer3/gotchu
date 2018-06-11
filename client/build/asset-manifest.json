@@ -1,9 +1,15 @@
 {
-  "main.css": "static/css/main.868c5013.css",
-  "main.css.map": "static/css/main.868c5013.css.map",
-  "main.js": "static/js/main.7ba85a71.js",
-  "main.js.map": "static/js/main.7ba85a71.js.map",
+  "main.css": "static/css/main.6833a061.css",
+  "main.css.map": "static/css/main.6833a061.css.map",
+  "main.js": "static/js/main.921c2b73.js",
+  "main.js.map": "static/js/main.921c2b73.js.map",
+  "static\\media\\facebookLogo.png": "static/media/facebookLogo.f68ae01e.png",
+  "static\\media\\flintLogo.png": "static/media/flintLogo.520f62c7.png",
   "static\\media\\flintMap2.jpg": "static/media/flintMap2.9c5ccad4.jpg",
   "static\\media\\gotchuLogo.png": "static/media/gotchuLogo.316c9d2a.png",
+  "static\\media\\instagramLogo.png": "static/media/instagramLogo.027b48bc.png",
+  "static\\media\\letterIcon.png": "static/media/letterIcon.16ebfa3d.png",
+  "static\\media\\michiganLogo.png": "static/media/michiganLogo.e1a18326.png",
+  "static\\media\\twitterLogo.png": "static/media/twitterLogo.ef78cef3.png",
   "static\\media\\whiteX.png": "static/media/whiteX.d825f174.png"
 }
