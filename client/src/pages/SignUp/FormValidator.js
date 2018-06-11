@@ -26,7 +26,9 @@ class FormValidator extends Component {
     console.log("IF")
   }
   else {
+    alert("You have entered an invalid email address!");
     console.log("ELSE")
+    return;
   }
 
 

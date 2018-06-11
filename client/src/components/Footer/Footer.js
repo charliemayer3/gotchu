@@ -26,6 +26,11 @@ class Footer extends Component {
   toggleFooterModal() {
     this.setState({ visible: !this.props.footerVisibility });
   }
+
+  openInNewTab(url) {
+      var win = window.open(url, '_blank');
+      win.focus();
+  }
  
   render() {
 
@@ -46,17 +51,17 @@ class Footer extends Component {
               <List>
                 <ListItem>
                   <Route>
-                    <img onClick={() => window.location = 'https://facebook.com'} src={Facebook} />
+                    <img onClick={() => this.openInNewTab('https://facebook.com')} src={Facebook} />
                   </Route>
                 </ListItem>
                 <ListItem>
                   <Route>
-                    <img onClick={() => window.location = 'https://www.instagram.com/gotchu.world/'} src={Instagram} />
+                    <img onClick={() => this.openInNewTab('https://www.instagram.com/gotchu.world/')} src={Instagram} />
                   </Route>
                 </ListItem>
                 <ListItem>
                   <Route>
-                    <img onClick={() => window.location = 'https://twitter.com/GotchuW'} src={Twitter} />
+                    <img onClick={() => this.openInNewTab('https://twitter.com/GotchuW')} src={Twitter} />
                   </Route>
                 </ListItem>
                 <ListItem>

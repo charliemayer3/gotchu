@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 import Logo from '../../images/gotchuLogo.png';
 import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 import Fade from 'react-reveal/Fade';
-import Flint from '../../images/flintLogo.png';
-import Michigan from '../../images/michiganLogo.png';
+import Mouse from '../../images/labMouseLogo.png';
 
 class Home extends Component {
   constructor(props) {
@@ -32,15 +31,12 @@ class Home extends Component {
           </Fade>
           <Fade bottom>
             <h4>
-              "Simple, substantial social change."
+              Simple Substantial Social Change.
             </h4>
           </Fade>
           <div className="homeImages">
-            <Fade left>
-              <img src={Flint} />
-            </Fade>
-            <Fade right>
-              <img src={Michigan} />
+            <Fade bottom>
+              <img src={Mouse} />
             </Fade>
           </div>
         </div>
