@@ -24,8 +24,13 @@
 	font-family: 'ubuntu';
 }
 
-.loginButtons {
+.homeImages {
 	text-align: center;
+}
+
+.homeImages img {
+	width: 10vw;
+	padding: 5px;
 }
 
 .loginButtons button {

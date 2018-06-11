@@ -1,6 +1,6 @@
 #loginModal {
   width: 50vw;
-  height: 100vh;
+  height: 80vh;
   background: linear-gradient(#3686A0, white);
   /*background-color: #3686A0;*/
   color: white;
@@ -8,12 +8,15 @@
   top: 0;
   left: 0;
   margin-left: 25vw;
+  margin-top: 10vh;
   -webkit-transition: all 500ms cubic-bezier(1.000, 0.085, 0.640, 0.810); 
    -moz-transition: all 500ms cubic-bezier(1.000, 0.085, 0.640, 0.810); 
      -o-transition: all 500ms cubic-bezier(1.000, 0.085, 0.640, 0.810); 
         transition: all 500ms cubic-bezier(1.000, 0.085, 0.640, 0.810); /* custom */
   overflow: scroll;
   z-index: 100;
+  -webkit-box-shadow: 0 0 50px -10px #000000;
+  box-shadow: 0 0 50px -10px #000000;
 }
 
 #loginModal.hide {
@@ -65,7 +68,7 @@
   width: 3%;
   margin-right: 1.5vw;
   margin-top: 6vh;
-  transition: all .25s cubic-bezier(0.000, 0.000, 0.230, 1);
+  transition: all .15s cubic-bezier(0.000, 0.000, 0.230, 1);
 }
 
 #closeX:hover {
