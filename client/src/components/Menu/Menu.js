@@ -58,7 +58,7 @@ class Menu extends Component {
               </ListItem> */}
               <ListItem>
                 <Link onClick={() => {this.setState({ visible: !this.state.visible, blackOverlay: true }) }} to={"/"}>
-                  Login / <br /> &nbsp; Signup
+                  Login + <br /> &nbsp; Signup
                 </Link>
               </ListItem>
                 <hr />
