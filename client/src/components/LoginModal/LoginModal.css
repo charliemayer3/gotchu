@@ -2,6 +2,8 @@
   width: 50vw;
   height: 80vh;
   background: linear-gradient(#3686A0, #b4bdc0);
+  border: none;
+  border-radius: 5px;
   /*background-color: #3686A0;*/
   color: white;
   position: fixed;
@@ -73,8 +75,8 @@
 
 #closeX:hover {
   cursor: pointer;
-  -webkit-transform: rotate(90deg); /* Safari */
-  transform: rotate(90deg);
+  -webkit-transform: scale(1.25); /* Safari */
+  transform: scale(1.25);
 }
 
 

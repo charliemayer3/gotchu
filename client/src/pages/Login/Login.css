@@ -1,6 +1,6 @@
 .LoginForm {
 	text-align: center;
-	margin-top: 15vh;
+	margin-top: 10vh;
 	font-size: 30px;
 }
 
@@ -9,6 +9,7 @@
 	border: none;
 	border-bottom: solid;
 	border-width: 2px;
+	border-color: white !important;
 	width: 100px;
 	min-width: auto;
 	-webkit-transition: width .5s; /* Safari */
@@ -62,4 +63,11 @@ label:focus,
 	padding: 10px;
 	-webkit-box-shadow: 0 0 50px -10px #000000;
   	box-shadow: 0 0 10px -3px #000000;
+}
+
+#loginSubmit-button:active {
+	-webkit-box-shadow: inset 0px 0px 15px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 15px #c1c1c1;
+   	box-shadow: inset 0px 0px 15px #c1c1c1;
+   	outline: none;
 }
