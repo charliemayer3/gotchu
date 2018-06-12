@@ -6,7 +6,7 @@ import "./SignUp.css";
 import { Alert } from 'reactstrap';
 // import FormValidator from './FormValidator.js';
 
-class Signup extends Component {
+class SignupForm extends Component {
 	constructor() {
 		super()
 		this.state = {
@@ -50,17 +50,18 @@ class Signup extends Component {
 		}
 		this.setState({ submitClicked: true})
 		if (!this.state.emailError && !this.state.passwordBadMatch && this.state.first_name != '' && this.state.country != '' && this.state.city != '' && this.state.postal_code != '' && this.state.phone_number != '') {
-			console.log("email, password, and first name are good")
+			console.log("email, password, first name, country, city, postal code and phone number are good")
 			axios
 				.post('/auth/signup', {
-					first_name: this.state.brewery,
-					middle_name: this.state.breweryURL,
-					last_name: this.state.username,
+					first_name: this.state.first_name,
+					middle_name: this.state.middle_name,
+					last_name: this.state.last_name,
 					country: this.state.country,
 					city: this.state.city,
 					postal_code: this.state.postal_code,
 					phone_number: this.state.phone_number,
 					email: this.state.email,
+					username: this.state.email,
 					password: this.state.password
 				})
 				.then(response => {
@@ -244,4 +245,4 @@ class Signup extends Component {
 	}
 }
 
-export default Signup;
+export default SignupForm;
