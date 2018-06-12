@@ -4,6 +4,7 @@ const User = require('../models/user')
 const passport = require('../passport')
 
 // this route is just used to get the user basic info
+
 router.get('/user', (req, res, next) => {
 	console.log('===== user!!======')
 	console.log(req.user)
@@ -45,7 +46,8 @@ router.post('/logout', (req, res) => {
 })
 
 router.post('/signup', (req, res) => {
-	const { username, password, first_name, email, country, city, phone_number, postal_code } = req.body
+	const { username, password, first_name, middle_name, last_name, email, country, city, phone_number, postal_code } = req.body
+	console.log("ROUROIUROIROIUROIURUORIU" + req.body)
 	// ADD VALIDATION
 	User.findOne({ 'local.username': username }, (err, userMatch) => {
 		if (userMatch) {
@@ -57,6 +59,8 @@ router.post('/signup', (req, res) => {
 			'local.username': username,
 			'local.password': password,
 			'first_name': first_name,
+			'middle_name': middle_name,
+			'last_name': last_name,
 			'email': email,
 			'country': country,
 			'city': city,

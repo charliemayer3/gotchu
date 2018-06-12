@@ -8,9 +8,7 @@ const router = require('./auth');
 const MongoStore = require('connect-mongo')(session);
 const app = express();
 const path = require("path");
-const PORT = process.env.PORT || 3001;
-
-app.use(express.static("client/build"));
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static("client/build"));
 
@@ -23,7 +21,7 @@ app.use((req, res, next) => {
 })
 
 // Add routes, both API and view
-app.use(routes);
+app.use(routes); 
 
 mongoose.Promise = global.Promise
 let MONGO_URL

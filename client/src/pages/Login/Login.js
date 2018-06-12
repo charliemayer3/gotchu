@@ -28,11 +28,12 @@ class Login extends Component {
 	}
 
 	handleSubmit(event) {
+		console.log(this.props)
 		event.preventDefault()
 		console.log('handleSubmit')
-		// this.props._login(this.state.username, this.state.password)
+		this.props._login(this.state.username, this.state.password)
 		setTimeout(this.alertChange, 1200)
-		window.location = '/user'
+		// window.location = '/user'
 	}
 
 	handleEnter(event) {
