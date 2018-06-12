@@ -1,6 +1,5 @@
 import "./UserPortal.css";
 import React, { Component, PureComponent } from 'react';
-import ReactEcharts from '../../GraphComponents/index';
 import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 import Highchart from '../../components/Graphs/Highchart';
 import Highmap from '../../components/Graphs/Map';
