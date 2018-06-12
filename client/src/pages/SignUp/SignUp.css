@@ -10,6 +10,7 @@
 	border: none;
 	border-bottom: solid;
 	border-width: 2px;
+	border-color: white;
 	background-color: transparent;
 	font-size: 18px;
 	width: 200px;
@@ -84,4 +85,11 @@ label:focus,
 	padding: 10px;
 	-webkit-box-shadow: 0 0 50px -10px #000000;
   	box-shadow: 0 0 10px -3px #000000;
+}
+
+#signUpSubmit-button:active {
+	-webkit-box-shadow: inset 0px 0px 15px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 15px #c1c1c1;
+   	box-shadow: inset 0px 0px 15px #c1c1c1;
+   	outline: none;
 }
