@@ -8,7 +8,9 @@ const router = require('./auth');
 const MongoStore = require('connect-mongo')(session);
 const app = express();
 const path = require("path");
-const PORT = process.env.PORT || 3000;
+//use first port when building, second when working locally
+const PORT = process.env.PORT || 3001;
+// const PORT = 3001;
 
 app.use(express.static("client/build"));
 

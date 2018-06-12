@@ -20,6 +20,7 @@ class SignupForm extends Component {
 			email: '',
 			password: '',
 			confirmPassword: '',
+			username: '',
 			redirectTo: null,
 			alert: false,
 			passwordBadMatch: false,
@@ -36,6 +37,8 @@ class SignupForm extends Component {
 	}
 
 	handleSubmit(event) {
+		this.setState({username: this.state.email})
+		console.log("USERNAME: " + this.state.username)
 		if (this.state.password != this.state.confirmPassword) {
 			this.setState({passwordBadMatch: true})
 		} else {
@@ -61,13 +64,13 @@ class SignupForm extends Component {
 					postal_code: this.state.postal_code,
 					phone_number: this.state.phone_number,
 					email: this.state.email,
-					username: this.state.email,
+					username: this.state.username,
 					password: this.state.password
 				})
 				.then(response => {
 					console.log(response)
 					if (!response.data.errmsg) {
-						console.log('youre good')
+						console.log('youre good updated!!!')
 						console.log(response.data)
 						this.setState({
 				            alert: true
@@ -77,6 +80,7 @@ class SignupForm extends Component {
 					}
 				})
 		}
+		console.log(this.state.alert)
 		event.preventDefault()
 	}
 		
@@ -219,11 +223,11 @@ class SignupForm extends Component {
 			<span className="buttonContainer">
 				<Button id="signUpSubmit-button" onClick={this.handleSubmit}>Sign up</Button>
 			</span>
-			{/*
+			
 			<div>
 				{this.state.alert ? (
 					<Alert color="success" style={{ marginTop: "10px" }}>
-		        		You have successfully created an account! <a href="#" className="alert-link">Login here!</a>
+		        		You have successfully created an account! <a href="/user/" className="alert-link">Login here!</a>
 		      		</Alert>
       			) : ("")}
       		</div>
@@ -236,10 +240,7 @@ class SignupForm extends Component {
 	  			) : ("")}
 			</div>
 			
-			{this.state.submitClicked ? (
-				<FormValidator state={this.state}/>
-			) : ("")}
-			*/}
+			
       	</div>
 		)
 	}
