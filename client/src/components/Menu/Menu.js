@@ -63,7 +63,13 @@ class Menu extends Component {
               </ListItem>
                 <hr />
               <ListItem>
-                <Link onClick={this.forceUpdate} to={"/contact/"}>
+                <Link onClick={this.forceUpdate} to={"/about/"}>
+                  Who<br /> &nbsp; We Are
+                </Link>
+              </ListItem>
+                <hr />
+              <ListItem>
+                <Link onClick={this.forceUpdate} to={"/crisis/"}>
                   The <br /> &nbsp; Crisis
                 </Link>
               </ListItem>

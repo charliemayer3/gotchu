@@ -37,11 +37,11 @@ a:hover {
 }
 
 .NUpTS {
-  position: absolute !important;
+  position: fixed !important;
   left: 0 !important;
   top: 0 !important;
   background-color: #3886a0 !important;
-  border-bottom-right-radius: 20px !important;
+  border-bottom-right-radius: 5px !important;
   width: 8vw;
   padding: 20px !important;
   -webkit-transition: 0.50s cubic-bezier(.5, 1, .75, 1) !important;
@@ -59,7 +59,7 @@ a:hover {
   width: 15vw;
   position: relative;
   text-align: left;
-  padding-top: 8%;
+  padding-top: 6%;
   font-size: 3vh;
   font-weight: 900;
   z-index: 98;
