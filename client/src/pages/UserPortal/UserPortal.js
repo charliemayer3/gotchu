@@ -10,7 +10,16 @@ class UserPortal extends Component {
   constructor(props) {
     super(props);
     this.state = { 
+      user: {
+        first_name: 'Guest'
+      }
     };
+  }
+
+  componentDidMount() {
+    if(this.props.user) {
+      this.setState({user: this.props.user})
+    }
   }
  
   render() {
@@ -18,7 +27,7 @@ class UserPortal extends Component {
     return (
       <div className="userPortalContainer">
          <div className='welcomeHeader'>
-           <h1>Hello, {this.props.user.first_name}!</h1>
+           <h1>Hello, {this.state.user.first_name}!</h1>
            <span className='userInfo'>
              <h3>
                Your latest contributions have helped [enter demographic here]!

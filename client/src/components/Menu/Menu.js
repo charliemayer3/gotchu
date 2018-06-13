@@ -57,6 +57,7 @@ class Menu extends Component {
   }
  
   render() {
+    console.log(this.state.user)
     return (
       <div>
       	<div id="MenuButton">
