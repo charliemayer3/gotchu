@@ -79,6 +79,7 @@ a:hover {
 .overlay-menu__wrap li {
   padding: 20px;
   letter-spacing: 5px;
+  background-color: transparent !important;
 }
 
 .overlay-menu {

@@ -44,7 +44,10 @@ class Team extends Component {
 									</span>
 											<br />
 									<span style={{ fontStyle: 'italic' }}>
-										CEO, Founder
+										CEO / Founder
+									</span>
+									<span style={{  }}>
+										Don has a history of ground-breaking research that has protected mobile users from worldwide tracking system, secured automobiles from remote attack, and mitigated crippling IoT risks.
 									</span>
 								</div>
 							</div>
@@ -63,7 +66,11 @@ class Team extends Component {
 									</span>
 											<br />
 									<span style={{ fontStyle: 'italic' }}>
-										Head of Operations, Mechanical Engineer
+										Chief of Operations
+									</span>
+											<br />
+									<span style={{ width: '20%' }}>
+										Robyn is a diverse leader with experience in the automotive, consumer packaged goods, education, and social enterprise industries. She earned a B.S. in Mechanical Engineering from Kettering University, an MBA from Harvard Business School, and is a StartingBloc Fellow.
 									</span>
 								</div>
 							</div>
@@ -75,11 +82,15 @@ class Team extends Component {
 								</div>
 								<div id='jamisonText'>
 									<span style={{ fontSize: '25px' }}>
-										Jamison Day
+										Jamison M Day, PhD.
 									</span>
 											<br />
-									<span style={{ fontStyle: 'italic' }}>
-										Advisor Supply Chain
+									<span style={{ fontStyle: 'italic', marginBottom: '50px' }}>
+										Consultant for Supply Chain Distribution
+									</span>
+											<br />
+									<span style={{ width: '20%' }}>
+										Jamison is a Distinguished Data Scientist at LookingGlass Cyber Solutions, Inc. He served on a Supply Chain Security Team for the U.S. Director of National Intelligence. Jamison earned his Ph.D in Decision Science from Indiana University, and B.S. in Business Process Management.
 									</span>
 								</div>
 							</div>
