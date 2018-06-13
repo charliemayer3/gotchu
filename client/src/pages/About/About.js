@@ -20,7 +20,7 @@ class About extends Component {
 			<div style={{ height: "100vh", overflow: 'hidden'}}> 
 				<div className='aboutHeader'>
 					<div style={{ width: '75vw', margin: 'auto'}}>
-					<Fade top>
+					<Fade left>
 							<h3 id="aboutHeaderText">
 								About Us
 							</h3>
