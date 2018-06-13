@@ -21,7 +21,6 @@ class LoginModal extends Component {
       user: null
     };
     this.toggleLoginModal = this.toggleLoginModal.bind(this);
-    this._logout = this._logout.bind(this)
     this._login = this._login.bind(this)
   }
 
