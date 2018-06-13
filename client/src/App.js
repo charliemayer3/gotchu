@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 import './App.css';
 import Menu from './components/Menu';
-import Menu2 from './components/Menu2';
 import Home from './pages/Home';
 import User from './pages/UserPortal';
 import axios from 'axios';
@@ -59,11 +58,7 @@ class App extends Component {
     
     return (
       <div className="App">
-        {!this.state.user ? (
-          <Menu/>
-        ) : (
-          <Menu2/>
-        )}
+        <Menu user={this.state.user} />
         <Router> 
           <Switch>
             <Route exact path="/" component={Home} />
