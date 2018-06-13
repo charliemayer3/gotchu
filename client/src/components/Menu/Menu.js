@@ -63,7 +63,6 @@ class Menu extends Component {
       console.log('there is a props.user')
       console.log(this.state.user)
     }
-    console.log('there is not a props.user')
   }
  
   render() {
@@ -93,7 +92,7 @@ class Menu extends Component {
               */}
               {this.state.user ? (
                 <ListItem>
-                  <Link onClick={() => {this._logout()}} to={"/"}>
+                  <Link onClick={() => {this._logout}} to={"/"}>
                     Log Out
                   </Link>
                 </ListItem>
