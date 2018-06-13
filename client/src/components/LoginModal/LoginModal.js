@@ -21,10 +21,15 @@ class LoginModal extends Component {
       user: null
     };
     this.toggleLoginModal = this.toggleLoginModal.bind(this);
+    this.toLogin = this.toLogin.bind(this);
   }
 
   toggleLoginModal() {
     this.setState({ visible: !this.props.menuVisibility });
+  }
+
+  toLogin() {
+    this.setState({ signUp: false })
   }
 
   render() {
@@ -62,7 +67,7 @@ class LoginModal extends Component {
           {!this.state.signUp ? (
             <Login login={this.props.login} />
           ) : (
-            <SignUp/>
+            <SignUp toggleToLogin={this.toLogin} />
           )}
 
         </div>
