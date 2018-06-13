@@ -41,6 +41,7 @@ class App extends Component {
             brewery: response.data.user.brewery,
             breweryURL: response.data.user.breweryURL
           })
+
         } else {
           this.setState({
             loggedIn: false,
@@ -52,14 +53,19 @@ class App extends Component {
         }
     })
   }
+
   render() {
+    
     return (
       <div className="App">
         <Menu/>
         <Router> 
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/user" component={User} />
+
+            <Route exact path='/user' render={() => (
+              <User user={this.state.user}/>
+            )}/>
             <Route exact path="/about" component={About} />
             <Route exact path="/team" component={Team} />
             <Route exact path="/crisis" component={Crisis} />
