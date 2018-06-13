@@ -51,6 +51,7 @@ class Menu extends Component {
  
   render() {
     console.log(this.state.user)
+    console.log(this.props)
     return (
       <div>
       	<div id="MenuButton">
@@ -76,7 +77,7 @@ class Menu extends Component {
               */}
               {this.state.user ? (
                 <ListItem>
-                  <Link onClick={() => {this.props.logout}} to={"/"}>
+                  <Link onClick={this.props.logout} to={"/"}>
                     Log Out
                   </Link>
                 </ListItem>
