@@ -87,7 +87,7 @@ class DonationForm extends Component {
 	                    isOpen={this.state.modal} 
 	                    toggle={this.toggleModal}  
 	                    backdrop={this.state.backdrop}>
-	                  <ModalHeader toggle={this.toggleModal}><h1>Thank you for giving!!</h1></ModalHeader>
+	                  	<ModalHeader toggle={this.toggleModal}><h1>Thank you for giving!!</h1></ModalHeader>
 	                    <ModalBody>
 	                      <p>Your [amount] contribution makes a difference! Share your giving with pride, and encourage others to do the same!!</p>
 	                    </ModalBody>
