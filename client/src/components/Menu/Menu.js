@@ -19,7 +19,8 @@ class Menu extends Component {
       isActive: false,
       visible: false,
       blackOverlay: false,
-      social: false
+      social: false,
+      user: null
     };
     this.toggleMenu = this.toggleMenu.bind(this);
     this.toggleLoginModal = this.toggleLoginModal.bind(this);
@@ -54,6 +55,15 @@ class Menu extends Component {
 
   componentDidMount() {
     this.setState({user: this.props.user})
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(this.props.user != nextProps.user) {
+      this.setState({user: nextProps.user})
+      console.log('there is a props.user')
+      console.log(this.state.user)
+    }
+    console.log('there is not a props.user')
   }
  
   render() {
