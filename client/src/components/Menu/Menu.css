@@ -77,8 +77,14 @@ a:hover {
 }
 
 .overlay-menu__wrap li {
+<<<<<<< HEAD
   padding: 10px;
   letter-spacing: 3px;
+=======
+  padding: 20px;
+  letter-spacing: 5px;
+  background-color: transparent !important;
+>>>>>>> de61f5d91735a2f111a8ddea23a7a3d876dbef59
 }
 
 .overlay-menu {

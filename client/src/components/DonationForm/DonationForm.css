@@ -1,0 +1,56 @@
+.donationForm {
+	text-align: left;
+}
+
+.donationForm h1 {
+	font-weight: 700;
+}
+
+.donationForm label {
+	font-size: 20px;
+}
+
+#donationSelect {
+	width: 60%;
+	border-color: none;
+	margin-left: 5%;
+	padding: 10px 10px;
+    background-color: white;
+    border: none;
+    margin-top: 10px;
+    font-size: 20px;
+    padding: 15px;
+}
+
+.input-group-text {
+	font-size: 20px;
+	width: 
+}
+
+#customAmount {
+	width: 57%;
+	border-color: none;
+	margin-left: 5%;
+	padding: 10px 10px;
+    background-color: white;
+    border: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#customAmount input {
+	font-size: 20px;
+	padding-left: 5px;
+	width: 80%;
+}
+
+#donateButton {
+	margin-top: 40px;
+    background-color: #36869f;
+    color: white;
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 5px;
+
+}

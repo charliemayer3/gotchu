@@ -51,7 +51,7 @@ class Footer extends Component {
               <List>
                 <ListItem>
                   <Route>
-                    <img onClick={() => this.openInNewTab('https://facebook.com')} src={Facebook} />
+                    <img onClick={() => this.openInNewTab('https://www.facebook.com/Gotchu-209986712951166/')} src={Facebook} />
                   </Route>
                 </ListItem>
                 <ListItem>

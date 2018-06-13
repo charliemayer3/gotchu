@@ -16,7 +16,17 @@ class Crisis extends Component {
 
 	render() {  
 		return (  
-			<div>  
+			<div className='crisisBody'>  
+
+			<div className='crisisHeader'>
+					<div style={{ width: '75vw', margin: 'auto'}}>
+					<Fade left>
+							<h3 id="crisisHeaderText">
+								The Crisis
+							</h3>
+					</Fade>
+					</div>
+				</div>
 				<div className="crisisContainer">
 					<h4>
 					<Fade bottom> 
@@ -75,6 +85,15 @@ class Crisis extends Component {
 						of goods and services,” says Bailey.
 					</Fade>
 					</h4>
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+				</div>
+				<div class="crisisOcean">
+					  <div class="crisisWave"></div>
+					  <div class="crisisWave"></div>
 				</div>
 			</div>             
 		)
