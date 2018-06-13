@@ -10,7 +10,19 @@ class UserPortal extends Component {
   constructor(props) {
     super(props);
     this.state = { 
+      user: {
+        first_name: 'Guest'
+      }
     };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(this.props.user != nextProps.user) {
+      this.setState({user: nextProps.user})
+      console.log('there is a props.user')
+      console.log(this.state.user)
+    }
+    console.log('there is not a props.user')
   }
  
   render() {
@@ -18,7 +30,7 @@ class UserPortal extends Component {
     return (
       <div className="userPortalContainer">
          <div className='welcomeHeader'>
-           <h1>Hello, {this.props.user.first_name}!</h1>
+           <h1>Hello, {this.state.user.first_name}!</h1>
            <span className='userInfo'>
              <h3>
                Your latest contributions have helped [enter demographic here]!
@@ -37,10 +49,10 @@ class UserPortal extends Component {
           {/* <Highmap /> */}
         </div>
       </div>
-    
     );
   }
 }
+
 
 export default UserPortal;
 

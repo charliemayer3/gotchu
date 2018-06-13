@@ -9,6 +9,7 @@ import { List, ListItem } from "../List";
 import LoginModal from '../LoginModal';
 import LoginCloseBtn from '../LoginCloseBtn';
 import Footer from '../Footer';
+import axios from 'axios';
 
 class Menu extends Component {
   constructor(props) {
@@ -18,10 +19,12 @@ class Menu extends Component {
       isActive: false,
       visible: false,
       blackOverlay: false,
-      social: false
+      social: false,
+      user: null
     };
     this.toggleMenu = this.toggleMenu.bind(this);
     this.toggleLoginModal = this.toggleLoginModal.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
  
   toggleMenu() {
@@ -34,8 +37,31 @@ class Menu extends Component {
     this.setState({ blackOverlay: !this.state.blackOverlay });
     console.log("click worked")
   }
+
+  componentDidMount() {
+    this.setState({user: this.props.user})
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(this.props.user != nextProps.user) {
+      this.setState({user: nextProps.user})
+      console.log('there is a props.user')
+      console.log(this.state.user)
+    }
+  }
+
+  handleSubmit(event) {
+    console.log(this.props)
+    event.preventDefault()
+    console.log('handleSubmit')
+    this.props.logout()
+    setTimeout(this.alertChange, 1200)
+    window.location = '/'
+  }
  
   render() {
+    console.log(this.state.user)
+    console.log(this.props)
     return (
       <div>
       	<div id="MenuButton">
@@ -51,17 +77,27 @@ class Menu extends Component {
         >
           <Router>
             <List>
+              {/*
               <ListItem>
                <Link onClick={this.forceUpdate} to={"/"}>
                   Home
                 </Link>
               </ListItem>
-                <hr />
-              <ListItem>
-                <Link onClick={() => {this.setState({ visible: !this.state.visible, blackOverlay: true }) }} to={"/"}>
-                  Login + <br /> &nbsp; Signup
-                </Link>
-              </ListItem>
+              <hr />
+              */}
+              {this.state.user ? (
+                <ListItem>
+                  <Link onClick={this.handleSubmit} to={"/"}>
+                    Log Out
+                  </Link>
+                </ListItem>
+              ) : (
+                <ListItem>
+                  <Link onClick={() => {this.setState({ visible: !this.state.visible, blackOverlay: true }) }} to={"/"}>
+                    Login + <br /> &nbsp; Signup
+                  </Link>
+                </ListItem>
+              )}
                 <hr />
               <ListItem>
                 <Link onClick={this.forceUpdate} to={"/about/"}>
@@ -91,7 +127,7 @@ class Menu extends Component {
           </Router>
         </OverlayMenu>
 
-        <LoginModal menuVisibility={this.state.visible} toggleLoginModal={this.toggleLoginModal} toggleBlack={this.toggleBlack}>
+        <LoginModal menuVisibility={this.state.visible} toggleLoginModal={this.toggleLoginModal} toggleBlack={this.toggleBlack} login={this.props.login} >
           
         </LoginModal>
 

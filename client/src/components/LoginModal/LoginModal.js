@@ -21,42 +21,13 @@ class LoginModal extends Component {
       user: null
     };
     this.toggleLoginModal = this.toggleLoginModal.bind(this);
-    this._login = this._login.bind(this)
   }
 
   toggleLoginModal() {
     this.setState({ visible: !this.props.menuVisibility });
   }
 
-  _login(username, password) {
-    this.setState({
-            loggedIn: true,
-            user: {
-              first_name: 'charlieman'
-            }
-          })
-    console.log('login function being called correctly' + username + password)
-    axios
-      .post('/auth/login', {
-        username,
-        password
-      })
-      .then(response => {
-        console.log(response)
-        if (response.status === 200) {
-          // update the state
-          this.setState({
-            loggedIn: true,
-            user: response.data.user
-          })
-          console.log(response.data.user)
-          window.location = '/user/'
-        }
-      })
-      window.location = '/user/'
-  }
- 
-   render() {
+  render() {
     console.log(this.props)
     var visibility = "hide";
  
@@ -89,7 +60,7 @@ class LoginModal extends Component {
           </span>
 
           {!this.state.signUp ? (
-            <Login _login={this._login} />
+            <Login login={this.props.login} />
           ) : (
             <SignUp/>
           )}

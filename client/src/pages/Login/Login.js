@@ -7,8 +7,8 @@ import "./Login.css";
 
 
 class Login extends Component {
-	constructor() {
-		super()
+	constructor(props) {
+		super(props)
 		this.state = {
 			username: '',
 			password: '',
@@ -31,7 +31,7 @@ class Login extends Component {
 		console.log(this.props)
 		event.preventDefault()
 		console.log('handleSubmit')
-		this.props._login(this.state.username, this.state.password)
+		this.props.login(this.state.username, this.state.password)
 		setTimeout(this.alertChange, 1200)
 		// window.location = '/user'
 	}

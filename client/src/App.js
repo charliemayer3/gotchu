@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 import './App.css';
 import Menu from './components/Menu';
-import Menu2 from './components/Menu2';
 import Home from './pages/Home';
 import User from './pages/UserPortal';
 import axios from 'axios';
@@ -20,14 +19,10 @@ class App extends Component {
     this.state = {
       loggedIn: false,
       user: null,
-      id: null,
-      brewery: null,
-      breweryURL: null,
-      breweries: [],
-      beers: [],
       alert: false 
     }
-
+    this._logout = this._logout.bind(this)
+    this._login = this._login.bind(this)
   }
   componentDidMount() {
     axios.get('/auth/user').then(response => {
@@ -36,34 +31,59 @@ class App extends Component {
           console.log('THERE IS A USER')
           this.setState({
             loggedIn: true,
-            user: response.data.user,
-            info: null,
-            id: response.data.user._id,
-            brewery: response.data.user.brewery,
-            breweryURL: response.data.user.breweryURL
+            user: response.data.user
           })
 
         } else {
           this.setState({
             loggedIn: false,
-            user: null,
-            info: null,
-            brewery: null,
-            breweryURL: null         
+            user: null       
           })
         }
     })
+  }
+
+  _logout() {
+    console.log('logging out')
+    axios.post('/auth/logout').then(response => {
+      console.log(response.data)
+      if (response.status === 200) {
+        this.setState({
+          loggedIn: null,
+          user: null
+        })
+        window.location = '/'
+      }
+      window.location = '/'
+    })
+  }
+
+  _login(username, password) {
+    console.log('login function being called correctly' + username + password)
+    axios
+      .post('/auth/login', {
+        username,
+        password
+      })
+      .then(response => {
+        console.log(response)
+        if (response.status === 200) {
+          // update the state
+          this.setState({
+            loggedIn: true,
+            user: response.data.user
+          })
+          console.log(response.data.user)
+          window.location = '/user/'
+        }
+      })
   }
 
   render() {
     
     return (
       <div className="App">
-        {!this.state.user ? (
-          <Menu/>
-        ) : (
-          <Menu2/>
-        )}
+        <Menu user={this.state.user} login={this._login} logout={this._logout}/>
         <Router> 
           <Switch>
             <Route exact path="/" component={Home} />
