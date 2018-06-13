@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { Button } from 'reactstrap';
 import "./DonationForm.css";
-import { Label, FormGroup, InputGroup, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
+import { Label, FormGroup, InputGroup, InputGroupAddon, InputGroupText, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 // import { Alert } from 'reactstrap';
 
 
@@ -11,9 +11,16 @@ class DonationForm extends Component {
 	constructor() {
 		super()
 		this.state = {
+			modal: false,
+			backdrop: false
 		}
 		// this.googleSignin = this.googleSignin.bind(this)
-		this.handleSubmit = this.handleSubmit.bind(this)
+		this.handleSubmit = this.handleSubmit.bind(this);
+		this.toggleModal = this.toggleModal.bind(this)
+	}
+
+	toggleModal() {
+	    this.setState({ modal: !this.state.modal })
 	}
 
 	handleChange(event) {
@@ -73,7 +80,26 @@ class DonationForm extends Component {
 			        <InputGroupAddon addonType="append">.00</InputGroupAddon>
 			      </InputGroup>
 			      <br />
-			      <Button id="donateButton">Donate!</Button>
+			      <Button id="donateButton" onClick={this.toggleModal}>Donate!</Button>
+
+	                <Modal
+	                	className='donateModal'
+	                    isOpen={this.state.modal} 
+	                    toggle={this.toggleModal}  
+	                    backdrop={this.state.backdrop}>
+	                  <ModalHeader toggle={this.toggleModal}><h1>Thank you for giving!!</h1></ModalHeader>
+	                    <ModalBody>
+	                      <p>Your [amount] contribution makes a difference! Share your giving with pride, and encourage others to do the same!!</p>
+	                    </ModalBody>
+	                    <ModalFooter>
+	                      <Button 
+	                        size="sm"
+	                        color="primary" 
+	                        onClick={this.toggleModal}>Close
+	                      </Button>
+	                    </ModalFooter>
+	                </Modal>
+
 			    </div>
 			)
 	}
