@@ -66,9 +66,10 @@ class LoginModal extends Component {
             user: response.data.user
           })
           console.log(response.data.user)
-          // window.location = '/user/'
+          window.location = '/user/'
         }
       })
+      window.location = '/user/'
   }
  
    render() {
