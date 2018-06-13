@@ -93,7 +93,7 @@ class Menu extends Component {
               */}
               {this.state.user ? (
                 <ListItem>
-                  <Link onClick={() => this._logout} to={"/"}>
+                  <Link onClick={() => this._logout()} to={"/"}>
                     Log Out
                   </Link>
                 </ListItem>
