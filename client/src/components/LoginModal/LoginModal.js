@@ -45,6 +45,12 @@ class LoginModal extends Component {
   }
 
   _login(username, password) {
+    this.setState({
+            loggedIn: true,
+            user: {
+              first_name: 'charlieman'
+            }
+          })
     console.log('login function being called correctly' + username + password)
     axios
       .post('/auth/login', {
@@ -60,7 +66,7 @@ class LoginModal extends Component {
             user: response.data.user
           })
           console.log(response.data.user)
-          window.location = '/user/'
+          // window.location = '/user/'
         }
       })
   }
@@ -104,6 +110,9 @@ class LoginModal extends Component {
           )}
 
         </div>
+
+
+
       </div>
     );
   }
