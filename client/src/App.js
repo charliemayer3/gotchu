@@ -57,11 +57,32 @@ class App extends Component {
     })
   }
 
+  _login(username, password) {
+    console.log('login function being called correctly' + username + password)
+    axios
+      .post('/auth/login', {
+        username,
+        password
+      })
+      .then(response => {
+        console.log(response)
+        if (response.status === 200) {
+          // update the state
+          this.setState({
+            loggedIn: true,
+            user: response.data.user
+          })
+          console.log(response.data.user)
+          window.location = '/user/'
+        }
+      })
+  }
+
   render() {
     
     return (
       <div className="App">
-        <Menu user={this.state.user} logout={this._logout}/>
+        <Menu user={this.state.user} login={this._login} logout={this._logout}/>
         <Router> 
           <Switch>
             <Route exact path="/" component={Home} />
