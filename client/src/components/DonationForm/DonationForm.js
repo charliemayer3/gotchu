@@ -50,8 +50,10 @@ class DonationForm extends Component {
 			      </h1>
 			      <br />
 			      <FormGroup>
-			          <Label for="exampleSelect">Select</Label>
-			          <Input type="select" name="select" id="exampleSelect">
+			          <Label for="donationSelect">Select</Label>
+			          	<br />
+			          <Input type="select" name="select" id="donationSelect">
+			          	<option>$0.00 - Select one or enter custom amount</option>
 			            <option>$5.00 - Nice!</option>
 			            <option>$10.00 - Alright!</option>
 			            <option>$20.00 - You Rock!</option>
@@ -60,16 +62,18 @@ class DonationForm extends Component {
 			          </Input>
 			        </FormGroup>
 			        <br />
-			        	or
+
 			        <br />
-			      <br />
-			      <InputGroup>
+			      	<br />
+			      <Label for="customAmount">Custom</Label>
+			      	<br />
+			      <InputGroup id='customAmount'>
 			        <InputGroupAddon addonType="prepend">$</InputGroupAddon>
-			        <Input placeholder="Custom Amount" type="number" step="1" />
+			        <Input placeholder="Amount" type="number" step="1" />
 			        <InputGroupAddon addonType="append">.00</InputGroupAddon>
 			      </InputGroup>
 			      <br />
-			      <Button>Donate!</Button>
+			      <Button id="donateButton">Donate!</Button>
 			    </div>
 			)
 	}

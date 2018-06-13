@@ -23,6 +23,7 @@
 #socialModal li {
   display: inline;
   margin: 0px 5px;
+  background-color: transparent !important;
 }
 
 #socialModal.hideFooter {

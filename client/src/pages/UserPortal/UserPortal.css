@@ -52,8 +52,21 @@
 }
 
 .donorPortal {
-	width: 50%;
+	width: 40%;
+	height: 45vh;
 	margin: auto;
 	display: inline-block;
-	padding: 5%;
+	padding-top: 0px;
+    padding-bottom: 10%;
 }
+
+.input-group-prepend {
+	display: inline-block;
+}
+
+ .input-group-append {
+	display: inline-block;
+}
+
+
+
