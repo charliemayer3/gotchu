@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom'
 import { Button } from 'reactstrap';
 import "./Crisis.css";
 import Fade from 'react-reveal/Fade';
+import textBack from '../../images/colorBack.png';
 // import { Alert } from 'reactstrap';
 
 
@@ -91,9 +92,12 @@ class Crisis extends Component {
 					<br />
 					<br />
 				</div>
-				<div class="crisisOcean">
+				{/* <div class="crisisOcean">
 					  <div class="crisisWave"></div>
 					  <div class="crisisWave"></div>
+				</div> */}
+				<div id="crisisBackground">
+					<img src={textBack}/>
 				</div>
 			</div>             
 		)

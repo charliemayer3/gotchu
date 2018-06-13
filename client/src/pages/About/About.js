@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom'
 import { Button } from 'reactstrap';
 import "./About.css";
 import Fade from 'react-reveal/Fade';
+import textBack from '../../images/colorBack.png';
 // import { Alert } from 'reactstrap';
 
 
@@ -16,7 +17,7 @@ class About extends Component {
 
 	render() { 
 		return ( 
-			<div> 
+			<div style={{ height: "100vh", overflow: 'hidden'}}> 
 				<div className='aboutHeader'>
 					<div style={{ width: '75vw', margin: 'auto'}}>
 					<Fade top>
@@ -54,6 +55,9 @@ class About extends Component {
 						<br />
 					</h4>
 				</div>
+				<div id="aboutBackground">
+						<img src={textBack}/>
+					</div>
 			</div>             
 		)
 	}     

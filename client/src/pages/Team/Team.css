@@ -4,6 +4,13 @@
   color: black;
 }
 
+.teamBody {
+  background-color: white;
+  height: 100vh;
+  overflow: hidden;
+  padding-bottom: 5vh;
+}
+
 .teamHeader {
 	width: 100%;
 	height: 10vh;
@@ -15,8 +22,21 @@
   margin-bottom: 40px;
 }
 
+#teamBackground{
+  position: relative;
+  z-index: 0;
+  float: left;
+  width: 100vw;
+}
+
 .teamContainer {
   text-align: center;
+  position: absolute;
+  z-index: 1;
+  height: 80vh;
+  padding-bottom: 50px;
+  overflow: scroll;
+  width: 100vw;
 }
 
 .teamContainer img {
@@ -45,6 +65,7 @@
   width: 75vw;
   margin: auto;
   margin-bottom: 40px;
+  clear: both;
 }
 
   #robyn {
@@ -74,10 +95,12 @@
   width: 75vw;
   margin: auto;
   margin-bottom: 40px;
+  clear: both;
 }
 
   #charlie {
     display: inline-block;
+    width: 50%;
   }
   #charlie img {
     width: 50%;
@@ -87,6 +110,7 @@
   }
 
   #max {
+    width: 50%;
     display: inline-block;
   }
   #max img {
