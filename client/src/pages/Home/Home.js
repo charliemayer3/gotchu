@@ -36,7 +36,7 @@ class Home extends Component {
           </Fade>
           <div className="homeImages">
             <Fade bottom>
-              <img src={Mouse} />
+              <img style={{ marginTop: '10vh' }}src={Mouse} />
             </Fade>
           </div>
         </div>

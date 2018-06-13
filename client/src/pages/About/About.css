@@ -1,23 +1,36 @@
 .aboutContainer {
 	width: 75vw;
 	padding: 20px;
-	margin: auto;
 	margin-top: 2%;
 	font-size: 25px;
+	margin: auto;
+	position: absolute;
+	left: 13vw;
 }
 
 #aboutHeaderText {
   font-size: 40px;
   margin: 0px;
-  color: white;
+  color: #2b2b2b;
 }
 
 .aboutHeader {
 	width: 100%;
 	height: 10vh;
     margin-top: 0px;
-    background-color: #A2A2A1;
+    background-color: white;
     padding: 5vh 0 0 0;
     -webkit-box-shadow: 0 0 30px -10px #000;
 	box-shadow: 0 0 30px -10px #000;
+}
+
+#aboutBackground {
+	position: relative;
+	z-index: -1;
+	float: left;
+	width: 100vw;
+}
+
+.aboutContainer a {
+	color: #4D4B50;
 }
