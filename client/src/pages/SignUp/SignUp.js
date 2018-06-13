@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import "./SignUp.css";
 import { Alert } from 'reactstrap';
 // import FormValidator from './FormValidator.js';
 
 class SignupForm extends Component {
-	constructor() {
-		super()
+	constructor(props) {
+		super(props)
 		this.state = {
 			first_name: '',
 			middle_name: '',
@@ -216,17 +216,21 @@ class SignupForm extends Component {
 					/>
 				</div>
 			</div>
-			<span className="buttonContainer">
-				<Button id="signUpSubmit-button" onClick={this.handleSubmit}>Sign up</Button>
-			</span>
-			
+
 			<div>
 				{this.state.alert ? (
-					<Alert color="success" style={{ marginTop: "10px" }}>
-		        		You have successfully created an account! <a href="/user/" className="alert-link">Login here!</a>
+					<Alert color="success" style={{ marginTop: "10px", textAlign: 'center' }}>
+		        		You have successfully created an account! 
+		        		<Link onClick={this.props.toggleToLogin} to={"/"}>
+		        			Login here!
+		        		</Link>
 		      		</Alert>
       			) : ("")}
       		</div>
+
+			<span className="buttonContainer">
+				<Button id="signUpSubmit-button" onClick={this.handleSubmit}>Sign up</Button>
+			</span>
 
       		<div>
 				{this.state.passwordMatch ? (
