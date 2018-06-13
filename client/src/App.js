@@ -19,14 +19,9 @@ class App extends Component {
     this.state = {
       loggedIn: false,
       user: null,
-      id: null,
-      brewery: null,
-      breweryURL: null,
-      breweries: [],
-      beers: [],
       alert: false 
     }
-
+    this._logout = this._logout.bind(this)
   }
   componentDidMount() {
     axios.get('/auth/user').then(response => {
@@ -35,22 +30,30 @@ class App extends Component {
           console.log('THERE IS A USER')
           this.setState({
             loggedIn: true,
-            user: response.data.user,
-            info: null,
-            id: response.data.user._id,
-            brewery: response.data.user.brewery,
-            breweryURL: response.data.user.breweryURL
+            user: response.data.user
           })
 
         } else {
           this.setState({
             loggedIn: false,
-            user: null,
-            info: null,
-            brewery: null,
-            breweryURL: null         
+            user: null       
           })
         }
+    })
+  }
+
+  _logout(event) {
+    event.preventDefault()
+    console.log('logging out')
+    axios.post('/auth/logout').then(response => {
+      console.log(response.data)
+      if (response.status === 200) {
+        this.setState({
+          loggedIn: null,
+          user: null
+        })
+        window.location = '/'
+      }
     })
   }
 
@@ -58,7 +61,7 @@ class App extends Component {
     
     return (
       <div className="App">
-        <Menu user={this.state.user} />
+        <Menu user={this.state.user} logout={this._logout}/>
         <Router> 
           <Switch>
             <Route exact path="/" component={Home} />
