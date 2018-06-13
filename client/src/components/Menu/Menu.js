@@ -56,7 +56,7 @@ class Menu extends Component {
     console.log('handleSubmit')
     this.props.logout()
     setTimeout(this.alertChange, 1200)
-    window.location = '/user'
+    window.location = '/'
   }
  
   render() {
