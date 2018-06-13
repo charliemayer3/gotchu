@@ -59,7 +59,7 @@ class Login extends Component {
 					<div className="LoginForm">
 						<form>
 							<label htmlFor="username">
-								Username
+								Email
 							</label>
 								<br />
 							<input

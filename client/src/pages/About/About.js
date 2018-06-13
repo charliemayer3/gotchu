@@ -17,13 +17,19 @@ class About extends Component {
 	render() { 
 		return ( 
 			<div> 
+				<div className='aboutHeader'>
+					<div style={{ width: '75vw', margin: 'auto'}}>
+					<Fade top>
+							<h3 id="aboutHeaderText">
+								Who We Are
+							</h3>
+					</Fade>
+					</div>
+				</div>
 				<div className="aboutContainer">
 					<h4>
 						<Fade bottom>
-						Lab Mouse Security, Inc. provides advanced security solution for
-						Blockchain and the Internet of Things (IoT) and is develops
-						technologies that will enable people to do greater things with
-						technology. Lab Mouse Security’s first product will be GotchU.
+						Lab Mouse Security, Inc. provides advanced security solution for Blockchain and the Internet of Things (IoT) and is develops technologies that will enable people to do greater things with technology. Lab Mouse Security’s first product will be GotchU.
 						</Fade>
 
 						<br />
@@ -35,28 +41,17 @@ class About extends Component {
 						<br />
 						<br />
 						<Fade bottom>
-						Gotchu was founded by veteran security researcher, Don Bailey, who has
-						uncovered hundreds of security vulnerabilities in mobile, IoT, and
-						embedded systems. Don has a history of ground-breaking research,
-						protecting mobile users from worldwide tracking systems, securing
-						automobiles from remote attack, and mitigating crippling IoT risks.
+						Gotchu was founded by veteran security researcher, Don Bailey, who has uncovered hundreds of security vulnerabilities in mobile, IoT, and embedded systems. Don has a history of ground-breaking research, protecting mobile users from worldwide tracking systems, securing automobiles from remote attack, and mitigating crippling IoT risks.
 						</Fade>
 
 						<br />
 						<br />
 						<Fade bottom>
-						Robyn Tsukayama, Chief of Operations, is a diverse leader with
-						experience in the automotive, consumer packaged goods, education, and
-						social enterprise industries. She earned a B.S. in Mechanical
-						Engineering from Kettering University, an MBA from Harvard Business
-						School, and is a StartingBloc Fellow.
+						Email us at <a style={{ display: 'inline-block' }}href={"mailto:" + "hello@gotchu.world"}>hello@gotchu.world</a>
 						</Fade>
 
 						<br />
 						<br />
-						<Fade bottom>
-						For more information visit gotchu.world or email us at hello@labmou.se
-						</Fade>
 					</h4>
 				</div>
 			</div>             

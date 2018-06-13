@@ -52,15 +52,15 @@ class Highchart extends Component {
   },
   series: [{
     name: 'Individual',
-    data: [5, 3, 4, 7, 2],
+    data: [15, 23, 14, 27, 32],
     _colorIndex: 0
   }, {
     name: 'Family',
-    data: [2, 2, 3, 2, 1],
+    data: [22, 12, 23, 32, 11],
     _colorIndex: 6
   }, {
     name: 'Community',
-    data: [3, 4, 4, 2, 5],
+    data: [31, 42, 14, 22, 15],
     _colorIndex: 9
   },
   ],
