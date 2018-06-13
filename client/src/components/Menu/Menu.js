@@ -24,6 +24,7 @@ class Menu extends Component {
     };
     this.toggleMenu = this.toggleMenu.bind(this);
     this.toggleLoginModal = this.toggleLoginModal.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
  
   toggleMenu() {
