@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 import './App.css';
 import Menu from './components/Menu';
+import Menu2 from './components/Menu2';
 import Home from './pages/Home';
 import User from './pages/UserPortal';
 import axios from 'axios';
@@ -41,6 +42,7 @@ class App extends Component {
             brewery: response.data.user.brewery,
             breweryURL: response.data.user.breweryURL
           })
+
         } else {
           this.setState({
             loggedIn: false,
@@ -52,14 +54,20 @@ class App extends Component {
         }
     })
   }
+
   render() {
+    
     return (
       <div className="App">
-        <Menu/>
+        {!this.state.user ? (
+          <Menu/>
+        ) : (
+          <Menu2/>
+        )}
         <Router> 
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/user" component={User} />
+            <Route exact path="/user" render={()=><User user={this.state.user}/>}/>
             <Route exact path="/about" component={About} />
             <Route exact path="/team" component={Team} />
             <Route exact path="/crisis" component={Crisis} />
