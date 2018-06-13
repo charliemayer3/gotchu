@@ -16,9 +16,9 @@ class UserPortal extends Component {
     };
   }
 
-  componentDidUpdate() {
-    if(this.props.user) {
-      this.setState({user: this.props.user})
+  componentWillReceiveProps(nextProps) {
+    if(this.props.user != nextProps.user) {
+      this.setState({user: nextProps.user})
       console.log('there is a props.user')
       console.log(this.state.user)
     }
