@@ -29,21 +29,6 @@ class LoginModal extends Component {
     this.setState({ visible: !this.props.menuVisibility });
   }
 
-  _logout(event) {
-    event.preventDefault()
-    console.log('logging out')
-    axios.post('/auth/logout').then(response => {
-      console.log(response.data)
-      if (response.status === 200) {
-        this.setState({
-          loggedIn: null,
-          user: null
-        })
-        window.location = '/'
-      }
-    })
-  }
-
   _login(username, password) {
     this.setState({
             loggedIn: true,

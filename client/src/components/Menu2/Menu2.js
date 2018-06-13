@@ -1,4 +1,4 @@
-import "./Menu.css";
+import "./Menu2.css";
 import React, { Component } from 'react'
 import { HamburgerArrow } from 'react-animated-burgers'
 import OverlayMenu from 'react-overlay-menu';
@@ -6,9 +6,8 @@ import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 import UserPortal from "../../pages/UserPortal";
 import { Redirect } from 'react-router';
 import { List, ListItem } from "../List";
-import LoginModal from '../LoginModal';
-import LoginCloseBtn from '../LoginCloseBtn';
 import Footer from '../Footer';
+import axios from 'axios';
 
 class Menu extends Component {
   constructor(props) {
@@ -29,10 +28,19 @@ class Menu extends Component {
     console.log("TM click worked")
   }
 
-  toggleLoginModal() {
-    this.setState({ visible: !this.state.visible });
-    this.setState({ blackOverlay: !this.state.blackOverlay });
-    console.log("click worked")
+  _logout(event) {
+    event.preventDefault()
+    console.log('logging out')
+    axios.post('/auth/logout').then(response => {
+      console.log(response.data)
+      if (response.status === 200) {
+        this.setState({
+          loggedIn: null,
+          user: null
+        })
+        window.location = '/'
+      }
+    })
   }
  
   render() {
@@ -58,8 +66,8 @@ class Menu extends Component {
               </ListItem>
                 <hr />
               <ListItem>
-                <Link onClick={() => {this.setState({ visible: !this.state.visible, blackOverlay: true }) }} to={"/"}>
-                  Login + <br /> &nbsp; Signup
+                <Link onClick={this.forceUpdate} to={"/user"}>
+                  My Giving<br /> &nbsp; Portal
                 </Link>
               </ListItem>
                 <hr />
@@ -87,13 +95,15 @@ class Menu extends Component {
                 </Link>
               </ListItem>
                 <hr />
+              <ListItem>
+                <Link onClick={() => this._logout} >
+                  Log Out
+                </Link>
+              </ListItem>
+                <hr />
             </List>
           </Router>
         </OverlayMenu>
-
-        <LoginModal menuVisibility={this.state.visible} toggleLoginModal={this.toggleLoginModal} toggleBlack={this.toggleBlack}>
-          
-        </LoginModal>
 
         {this.state.social ? (
           <Footer footerVisibility={this.state.social} toggleSocialModal={this.toggleSocialModal} /> 
