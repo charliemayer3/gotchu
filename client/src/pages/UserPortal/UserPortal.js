@@ -16,7 +16,7 @@ class UserPortal extends Component {
     };
   }
 
-  userCheck() {
+  componentDidMount() {
     if(this.props.user) {
       this.setState({user: this.props.user})
     }
@@ -24,13 +24,8 @@ class UserPortal extends Component {
   }
  
   render() {
-    console.log(this.props)
-    
+    console.log(this.props)  
     return (
-      <div>
-      <div>
-      {this.userCheck()}
-      </div>
       <div className="userPortalContainer">
          <div className='welcomeHeader'>
            <h1>Hello, {this.state.user.first_name}!</h1>
@@ -52,10 +47,10 @@ class UserPortal extends Component {
           {/* <Highmap /> */}
         </div>
       </div>
-      </div>
     );
   }
 }
+
 
 export default UserPortal;
 
