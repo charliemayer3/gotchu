@@ -87,7 +87,7 @@ class Menu extends Component {
               {this.state.user ? (
                 <div>
                   <ListItem>
-                    <Link onClick={this.handleSubmit} to={"/user"}>
+                    <Link onClick={this.forceUpdate} to={"/user"}>
                       My Account
                     </Link>
                   </ListItem>
@@ -129,7 +129,6 @@ class Menu extends Component {
                   The <br /> &nbsp; Team
                 </Link>
               </ListItem>
-                <hr />
             </List>
           </Router>
         </OverlayMenu>
