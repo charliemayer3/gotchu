@@ -96,7 +96,7 @@ class Menu extends Component {
               </ListItem>
                 <hr />
               <ListItem>
-                <Link onClick={() => this._logout} >
+                <Link onClick={() => this._logout} to={"/"}>
                   Log Out
                 </Link>
               </ListItem>
