@@ -22,6 +22,7 @@ class App extends Component {
       alert: false 
     }
     this._logout = this._logout.bind(this)
+    this._login = this._login.bind(this)
   }
   componentDidMount() {
     axios.get('/auth/user').then(response => {
