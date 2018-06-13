@@ -20,7 +20,7 @@ class Menu extends Component {
       visible: false,
       blackOverlay: false,
       social: false,
-      user: null
+      user: 'herlksjdf'
     };
     this.toggleMenu = this.toggleMenu.bind(this);
     this.toggleLoginModal = this.toggleLoginModal.bind(this);
@@ -53,17 +53,17 @@ class Menu extends Component {
     })
   }
 
-  componentDidMount() {
-    this.setState({user: this.props.user})
-  }
+  // componentDidMount() {
+  //   this.setState({user: this.props.user})
+  // }
 
-  componentWillReceiveProps(nextProps) {
-    if(this.props.user != nextProps.user) {
-      this.setState({user: nextProps.user})
-      console.log('there is a props.user')
-      console.log(this.state.user)
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if(this.props.user != nextProps.user) {
+  //     this.setState({user: nextProps.user})
+  //     console.log('there is a props.user')
+  //     console.log(this.state.user)
+  //   }
+  // }
  
   render() {
     console.log(this.state.user)
@@ -92,7 +92,7 @@ class Menu extends Component {
               */}
               {this.state.user ? (
                 <ListItem>
-                  <Link onClick={() => {this._logout}} to={"/"}>
+                  <Link onClick={() => {this._logout()}} to={"/"}>
                     Log Out
                   </Link>
                 </ListItem>
