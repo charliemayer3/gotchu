@@ -22,7 +22,7 @@ class About extends Component {
 					<div style={{ width: '75vw', margin: 'auto'}}>
 					<Fade top>
 							<h3 id="aboutHeaderText">
-								Who We Are
+								About Us
 							</h3>
 					</Fade>
 					</div>
