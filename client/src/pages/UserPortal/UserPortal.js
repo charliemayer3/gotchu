@@ -19,8 +19,10 @@ class UserPortal extends Component {
   componentDidMount() {
     if(this.props.user) {
       this.setState({user: this.props.user})
+      console.log('there is a props.user')
+      console.log(this.state.user)
     }
-    console.log("wahoo!!")
+    console.log('there is not a props.user')
   }
  
   render() {
