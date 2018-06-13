@@ -20,7 +20,7 @@ class Menu extends Component {
       social: false
     };
     this.toggleMenu = this.toggleMenu.bind(this);
-    this.toggleLoginModal = this.toggleLoginModal.bind(this);
+    this._logout = this._logout.bind(this);
   }
  
   toggleMenu() {
