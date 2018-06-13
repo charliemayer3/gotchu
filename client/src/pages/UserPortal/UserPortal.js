@@ -29,9 +29,7 @@ class UserPortal extends Component {
     return (
       <div>
       <div>
-      {this.props.user ? (
-        this.userCheck()
-      ) : ("")}
+      {this.userCheck()}
       </div>
       <div className="userPortalContainer">
          <div className='welcomeHeader'>
