@@ -10,7 +10,7 @@ class Login extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			username: '',
+			email: '',
 			password: '',
 			redirectTo: null,
 			loggedIn: true,
@@ -31,7 +31,7 @@ class Login extends Component {
 		console.log(this.props)
 		event.preventDefault()
 		console.log('handleSubmit')
-		this.props.login(this.state.username, this.state.password)
+		this.props.login(this.state.email, this.state.password)
 		setTimeout(this.alertChange, 1200)
 		// window.location = '/user'
 	}
@@ -58,15 +58,15 @@ class Login extends Component {
 				<div>
 					<div className="LoginForm">
 						<form>
-							<label htmlFor="username">
-								Email
+							<label htmlFor="email">
+								Email Address
 							</label>
 								<br />
 							<input
 								type="text"
-								name="username"
-								id="username"
-								value={this.state.username}
+								name="email"
+								id="email"
+								value={this.state.email}
 								onChange={this.handleChange}
 								placeholder=". . ."
 							/>

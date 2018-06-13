@@ -77,20 +77,27 @@ class Menu extends Component {
         >
           <Router>
             <List>
-              {/*
               <ListItem>
                <Link onClick={this.forceUpdate} to={"/"}>
                   Home
                 </Link>
               </ListItem>
               <hr />
-              */}
+              
               {this.state.user ? (
-                <ListItem>
-                  <Link onClick={this.handleSubmit} to={"/"}>
-                    Log Out
-                  </Link>
-                </ListItem>
+                <div>
+                  <ListItem>
+                    <Link onClick={this.forceUpdate} to={"/user"}>
+                      My Account
+                    </Link>
+                  </ListItem>
+                  <hr />
+                  <ListItem>
+                    <Link onClick={this.handleSubmit} to={"/"}>
+                      Log Out
+                    </Link>
+                  </ListItem>
+                </div>
               ) : (
                 <ListItem>
                   <Link onClick={() => {this.setState({ visible: !this.state.visible, blackOverlay: true }) }} to={"/"}>
@@ -122,7 +129,6 @@ class Menu extends Component {
                   The <br /> &nbsp; Team
                 </Link>
               </ListItem>
-                <hr />
             </List>
           </Router>
         </OverlayMenu>
