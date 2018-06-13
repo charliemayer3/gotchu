@@ -3,6 +3,9 @@ import React, { Component, PureComponent } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 import Highchart from '../../components/Graphs/Highchart';
 import Highmap from '../../components/Graphs/Map';
+import Impact from '../../images/impactReport.jpg';
+import DonationForm from '../../components/DonationForm';
+import Heatmap from '../../images/heatmap.jpg';
 
 
 
@@ -29,12 +32,22 @@ class UserPortal extends Component {
           </span>
         </div>
 
-        <div>
+        <div id='highchart'>
           <Highchart />
         </div>
 
+        <div className='userContainer'>
+          <div id='userMap'>
+            <img src={Heatmap} />
+          </div>
+
+          <div className='donorPortal'>
+            <DonationForm />
+          </div>
+        </div>
+
         <div>
-          {/* <Highmap /> */}
+          <img id='impact' src={Impact} />
         </div>
       </div>
     

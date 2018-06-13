@@ -1,72 +1,88 @@
-.LoginForm {
-	text-align: center;
-	margin-top: 15vh;
-	font-size: 30px;
+#teamHeaderText {
+  font-size: 40px;
+  margin: 0px;
+  color: black;
 }
 
-.LoginForm input {
-	text-align: center;
-	border: none;
-	border-bottom: solid;
-	border-width: 2px;
-	width: 100px;
-	min-width: auto;
-	-webkit-transition: width .5s; /* Safari */
-    transition: width .5s;
-    background-color: transparent;
-    font-size: 18px;
-}
-
-.LoginForm input:focus {
-	border: none;
-	border-bottom: solid;
-	border-width: 2px;
-	width: 200px;
-	max-width: 300px;
-}
-
-.LoginForm label:hover {
-	color: #dadada;
-}
-
-textarea:hover, 
-input:hover, 
-textarea:active, 
-input:active, 
-textarea:focus, 
-input:focus,
-button:focus,
-button:active,
-button:hover,
-label:focus,
-.btn:active,
-.btn.active
-{
-    outline:0px !important;
-}
-
-.buttonContainer{
+.teamHeader {
 	width: 100%;
-	display: block;
-	clear: both;
-	margin-top: 5%;
-	text-align: center;
+	height: 10vh;
+    margin-top: 0px;
+    background-color: white;
+    padding: 5vh 0 0 0;
+    -webkit-box-shadow: 0 0 30px -10px #000;
+	box-shadow: 0 0 30px -10px #000;
+  margin-bottom: 40px;
 }
 
-#loginSubmit-button {
-	background-color: #3d88a3;
-	position: relative;
-	color: white !important;
-	border: none;
-	font-size: 14px;
-	padding: 10px;
-	-webkit-box-shadow: 0 0 50px -10px #000000;
-  	box-shadow: 0 0 10px -3px #000000;
+.teamContainer {
+  text-align: center;
 }
 
-#loginSubmit-button:active {
-	-webkit-box-shadow: inset 0px 0px 15px #c1c1c1;
-    -moz-box-shadow: inset 0px 0px 15px #c1c1c1;
-   	box-shadow: inset 0px 0px 15px #c1c1c1;
-   	outline: none;
+.teamContainer img {
+  border-radius: 300px;
 }
+
+#container1 {
+  width: 75vw;
+  margin: auto;
+  margin-bottom: 40px;
+}
+  #don img {
+    width: 20%;
+    -webkit-box-shadow: 0 10px 15px -5px #000;
+  box-shadow: 0 10px 15px -5px #000;
+  margin-bottom: 20px;
+  }
+
+#container2 {
+  width: 75vw;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+  #robyn {
+    display: inline-block;
+  }
+  #robyn img {
+     width: 50%;
+     -webkit-box-shadow: 0 10px 15px -5px #000;
+    box-shadow: 0 10px 15px -5px #000;
+    margin-bottom: 20px;
+  }
+
+  #jamison {
+    display: inline-block;
+  }
+  #jamison img {
+    width: 50%;
+    -webkit-box-shadow: 0 10px 15px -5px #000;
+    box-shadow: 0 10px 15px -5px #000;
+    margin-bottom: 20px;
+  }
+
+#container3 {
+  width: 75vw;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+  #charlie {
+    display: inline-block;
+  }
+  #charlie img {
+    width: 50%;
+    -webkit-box-shadow: 0 10px 15px -5px #000;
+    box-shadow: 0 10px 15px -5px #000;
+    margin-bottom: 20px;
+  }
+
+  #max {
+    display: inline-block;
+  }
+  #max img {
+    width: 50%;
+    -webkit-box-shadow: 0 10px 15px -5px #000;
+    box-shadow: 0 10px 15px -5px #000;
+    margin-bottom: 20px;
+  }
