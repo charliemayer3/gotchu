@@ -16,7 +16,7 @@ class UserPortal extends Component {
     };
   }
 
-  componentDidMount() {
+  userCheck() {
     if(this.props.user) {
       this.setState({user: this.props.user})
       console.log('there is a props.user')
@@ -26,7 +26,10 @@ class UserPortal extends Component {
   }
  
   render() {
-    console.log(this.props)  
+    console.log(this.props)
+    this.props.user ? (
+      this.userCheck()
+    ) : ("")
     return (
       <div className="userPortalContainer">
          <div className='welcomeHeader'>
