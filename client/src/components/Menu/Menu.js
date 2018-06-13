@@ -48,7 +48,7 @@ class Menu extends Component {
           loggedIn: null,
           user: null
         })
-        window.location = '/'
+        // window.location = '/'
       }
     })
   }
