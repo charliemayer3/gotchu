@@ -55,6 +55,7 @@ class App extends Component {
         })
         window.location = '/'
       }
+      window.location = '/'
     })
   }
 

@@ -48,6 +48,15 @@ class Menu extends Component {
       console.log(this.state.user)
     }
   }
+
+  handleSubmit(event) {
+    console.log(this.props)
+    event.preventDefault()
+    console.log('handleSubmit')
+    this.props.logout()
+    setTimeout(this.alertChange, 1200)
+    // window.location = '/user'
+  }
  
   render() {
     console.log(this.state.user)
@@ -77,7 +86,7 @@ class Menu extends Component {
               */}
               {this.state.user ? (
                 <ListItem>
-                  <Link onClick={this.props.logout} to={"/"}>
+                  <Link onClick={this.handleSubmit} to={"/"}>
                     Log Out
                   </Link>
                 </ListItem>
