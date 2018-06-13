@@ -20,7 +20,6 @@ class SignupForm extends Component {
 			email: '',
 			password: '',
 			confirmPassword: '',
-			username: '',
 			redirectTo: null,
 			alert: false,
 			passwordBadMatch: false,
@@ -37,8 +36,6 @@ class SignupForm extends Component {
 	}
 
 	handleSubmit(event) {
-		this.setState({username: this.state.email})
-		console.log("USERNAME: " + this.state.username)
 		if (this.state.password != this.state.confirmPassword) {
 			this.setState({passwordBadMatch: true})
 		} else {
@@ -64,7 +61,6 @@ class SignupForm extends Component {
 					postal_code: this.state.postal_code,
 					phone_number: this.state.phone_number,
 					email: this.state.email,
-					username: this.state.username,
 					password: this.state.password
 				})
 				.then(response => {
