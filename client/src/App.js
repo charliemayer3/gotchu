@@ -44,7 +44,6 @@ class App extends Component {
   }
 
   _logout() {
-    
     console.log('logging out')
     axios.post('/auth/logout').then(response => {
       console.log(response.data)
