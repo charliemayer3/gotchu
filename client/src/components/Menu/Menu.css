@@ -57,6 +57,8 @@ a:hover {
 
 .overlay-menu__wrap {
   width: 15vw;
+  min-width: 150px;
+  height: 100vh;
   position: relative;
   text-align: left;
   padding-top: 10vh;
