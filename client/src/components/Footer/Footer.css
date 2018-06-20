@@ -3,10 +3,10 @@
   /*background-color: #3686A0;*/
   color: white;
   position: fixed;
-  -webkit-transition: all 5000ms linear; 
+/*  -webkit-transition: all 5000ms linear; 
    -moz-transition: all 5000ms linear; 
      -o-transition: all 5000ms linear; 
-        transition: all 5000ms linear; /* custom */
+        transition: all 5000ms linear; /* custom */*/
   overflow: scroll;
   z-index: 100;
 }
@@ -42,4 +42,35 @@
   display: inline-block;
   width: 4vh;
   padding: 1%;
+  transition: all .15s cubic-bezier(0.000, 0.000, 0.230, 1);
+}
+
+img:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.25); /* Safari */
+  transform: scale(1.25);
+}
+
+/*START MEDIA QUERIES*/
+
+@media screen and (min-width: 981px) {
+  
+}
+
+@media screen and (max-width: 980px) and (min-width: 769px) {
+  .socialIcons img {
+    padding: 2% 1%;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 641px) {
+  .socialIcons img {
+    padding: 2% 1%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .socialIcons img {
+    padding: 3% 1%;
+  }
 }
