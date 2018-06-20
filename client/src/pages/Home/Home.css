@@ -6,6 +6,7 @@
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	padding-bottom: 5vh;
 }
 
 .logoContainer {
@@ -13,7 +14,7 @@
 }
 
 #logo {
-	width: 25%;
+	width: 300px;
 	padding-top: 5vh;
 	margin: auto;
 }
@@ -29,8 +30,9 @@
 }
 
 .homeImages img {
-	width: 10vw;
+	width: 120px;
 	padding: 5px;
+	margin-top: 15vh;
 }
 
 .loginButtons button {
@@ -44,3 +46,56 @@
 	-webkit-box-shadow: 0 0 20px 0 rgba(0,0,0,.3);
     box-shadow: 0 0 20px 0 rgba(0,0,0,.3);
 }
+
+/*START MEDIA QUERIES*/
+
+@media screen and (min-width: 981px) {
+	
+}
+
+@media screen and (max-width: 980px) and (min-width: 769px) {
+
+	#logo {
+		width: 300px;
+		padding-top: 5vh;
+		margin: auto;
+	}
+
+	.homeImages img {
+		width: 120px;
+		padding: 5px;
+		margin-top: 15vh;
+	}
+}
+
+@media screen and (max-width: 768px) and (min-width: 641px) {
+
+}
+
+@media screen and (max-width: 640px) {
+
+	.homeBody {
+		height: 100vh;
+		width: 100vw;
+		background: url(../../images/flintMap2.jpg) no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		padding-bottom: 5vh;
+	}
+
+	#logo {
+		width: 300px;
+		padding-top: 5vh;
+		margin: auto;
+	}
+
+	.homeImages img {
+		width: 120px;
+		padding: 5px;
+		margin-top: 15vh;
+	}
+}
+
+

@@ -120,3 +120,21 @@
     box-shadow: 0 10px 15px -5px #000;
     margin-bottom: 20px;
   }
+
+/*START MEDIA QUERIES*/
+
+@media screen and (min-width: 981px) {
+  
+}
+
+@media screen and (max-width: 980px) and (min-width: 769px) {
+  
+}
+
+@media screen and (max-width: 768px) and (min-width: 641px) {
+
+}
+
+@media screen and (max-width: 640px) {
+  
+}

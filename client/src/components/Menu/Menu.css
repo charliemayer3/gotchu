@@ -47,6 +47,7 @@ a:hover {
   -webkit-transition: 0.50s cubic-bezier(.5, 1, .75, 1) !important;
   -moz-transition: 0.50s cubic-bezier(.5, 1, .75, 1) !important;
   transition: 0.50s cubic-bezier(.5, 1, .75, 1) !important;
+  min-width: 80px;
 }
 
 .NUpTS:focus {
@@ -312,3 +313,22 @@ label:hover {
   }
 }
 
+/*START MEDIA QUERIES*/
+
+@media screen and (min-width: 981px) {
+  
+}
+
+@media screen and (max-width: 980px) and (min-width: 769px) {
+  
+}
+
+@media screen and (max-width: 768px) and (min-width: 641px) {
+
+}
+
+@media screen and (max-width: 640px) {
+  .NUpTS:focus {
+    min-width: 150px;
+  }
+}
