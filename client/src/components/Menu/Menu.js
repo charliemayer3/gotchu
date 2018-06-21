@@ -129,6 +129,7 @@ class Menu extends Component {
                   The <br /> &nbsp; Team
                 </Link>
               </ListItem>
+                <hr />
             </List>
           </Router>
         </OverlayMenu>
