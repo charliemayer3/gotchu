@@ -151,7 +151,7 @@ class SignupForm extends Component {
 					/>
 				</div>
 
-				<div className="leftColumn">
+				<div className="rightColumn">
 					<label htmlFor="postal_code">Postal Code</label>
 						<br />
 					<input
