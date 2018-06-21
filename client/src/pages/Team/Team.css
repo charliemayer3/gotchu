@@ -2,6 +2,12 @@
   font-size: 40px;
   margin: 0px;
   color: black;
+  padding: 10px 0px;
+}
+
+.queryContainer {
+  position: absolute;
+  display: none;
 }
 
 .teamBody {
@@ -14,16 +20,15 @@
 .teamHeader {
 	width: 100%;
 	height: 10vh;
-    margin-top: 0px;
-    background-color: white;
-    padding: 5vh 0 0 0;
-    -webkit-box-shadow: 0 0 30px -10px #000;
+  margin-top: 0px;
+  background-color: white;
+  padding: 1vh 0 0 0;
+  -webkit-box-shadow: 0 0 30px -10px #000;
 	box-shadow: 0 0 30px -10px #000;
 }
 
 #teamBackground{
-  position: relative;
-  z-index: 0;
+  z-index: -10;
   float: left;
   width: 100vw;
 }
@@ -32,7 +37,7 @@
   text-align: center;
   position: absolute;
   z-index: 1;
-  height: 80vh;
+  height: 90vh;
   padding-bottom: 50px;
   overflow: scroll;
   width: 100vw;
@@ -136,5 +141,27 @@
 }
 
 @media screen and (max-width: 640px) {
-  
+  .teamHeader {
+    text-align: center;
+  }
+  #container1 {
+    width: 100vw;
+    clear: both;
+  }
+  #container2 {
+    display: none;
+  }
+  #container3 {
+    display: none;
+  }
+  .queryContainer {
+    display: block;
+    position: absolute;
+  }
+  #teamBackground img{
+    width: 380%;
+  }
+  .teamHeader {
+    height: 12vh;
+  }
 }
