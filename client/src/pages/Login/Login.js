@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { Button } from 'reactstrap';
 import "./Login.css";
+import axios from 'axios';
 // import { Alert } from 'reactstrap';
 
 
@@ -14,7 +15,8 @@ class Login extends Component {
 			password: '',
 			redirectTo: null,
 			loggedIn: true,
-			alert: false
+			alert: false,
+			user: null
 		}
 		// this.googleSignin = this.googleSignin.bind(this)
 		this.handleSubmit = this.handleSubmit.bind(this)
@@ -30,10 +32,33 @@ class Login extends Component {
 	handleSubmit(event) {
 		console.log(this.props)
 		event.preventDefault()
-		console.log('handleSubmit')
-		this.props.login(this.state.email, this.state.password)
+		this._login(this.state.email, this.state.password)
 		setTimeout(this.alertChange, 1200)
 		// window.location = '/user'
+	}
+
+	_login(username, password) {
+	    console.log('login function being called correctly' + username + password)
+	    axios
+	      .post('/auth/login', {
+	        username,
+	        password
+	      })
+	      .then(response => {
+	        console.log(response)
+	        if (response.status === 200) {
+	          // update the state
+	          this.setState({
+	            loggedIn: true,
+	            user: response.data.user
+	          })
+	          this.props.setUser()
+	          console.log(response.data.user)
+	          window.location = '/user/'
+	        } else {
+	          this.setState({loginError: true})
+	        }
+	      })
 	}
 
 	handleEnter(event) {
