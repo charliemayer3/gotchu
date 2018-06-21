@@ -60,10 +60,12 @@ class App extends Component {
   }
 
   setUser(user) {
-    this.setState({
-      loggedIn: true,
-      user: user
-    })
+    if (user) {
+      this.setState({
+        loggedIn: true,
+        user: user
+      })
+    }
   }
 
   render() {
