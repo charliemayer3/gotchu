@@ -36,6 +36,7 @@ class SignupForm extends Component {
 	}
 
 	handleSubmit(event) {
+		console.log(this.state)
 		if (this.state.password != this.state.confirmPassword) {
 			this.setState({passwordBadMatch: true})
 		} else {
@@ -150,7 +151,7 @@ class SignupForm extends Component {
 					/>
 				</div>
 
-				<div className="rightColumn">
+				<div className="leftColumn">
 					<label htmlFor="postal_code">Postal Code</label>
 						<br />
 					<input
@@ -215,11 +216,11 @@ class SignupForm extends Component {
 						required
 					/>
 				</div>
-			</div>
+			
 
 			<div>
 				{this.state.alert ? (
-					<Alert color="success" style={{ marginTop: "10px", textAlign: 'center' }}>
+					<Alert color="success">
 		        		You have successfully created an account! 
 		        		<Link onClick={this.props.toggleToLogin} to={"/"}>
 		        			Login here!
@@ -228,19 +229,21 @@ class SignupForm extends Component {
       			) : ("")}
       		</div>
 
+      		
+				{this.state.passwordBadMatch ? (
+					<div>
+					<Alert color="danger">
+		        		Your passwords do not match.
+		      		</Alert>
+		      		</div>
+
+	  			) : ("")}
+			
 			<span className="buttonContainer">
 				<Button id="signUpSubmit-button" onClick={this.handleSubmit}>Sign up</Button>
 			</span>
-
-      		<div>
-				{this.state.passwordMatch ? (
-					<Alert color="danger" style={{ marginTop: "10px" }}>
-		        		Your passwords do not match.
-		      		</Alert>
-	  			) : ("")}
+			
 			</div>
-			
-			
       	</div>
 		)
 	}
