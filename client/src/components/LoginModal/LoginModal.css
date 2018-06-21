@@ -11,10 +11,10 @@
   left: 0;
   margin-left: 25vw;
   margin-top: 10vh;
-  -webkit-transition: all 500ms cubic-bezier(1.000, 0.085, 0.640, 0.810); 
-   -moz-transition: all 500ms cubic-bezier(1.000, 0.085, 0.640, 0.810); 
-     -o-transition: all 500ms cubic-bezier(1.000, 0.085, 0.640, 0.810); 
-        transition: all 500ms cubic-bezier(1.000, 0.085, 0.640, 0.810); /* custom */
+  -webkit-transition: transform 500ms cubic-bezier(1.000, 0.085, 0.640, 0.810); 
+   -moz-transition: transform 500ms cubic-bezier(1.000, 0.085, 0.640, 0.810); 
+     -o-transition: transform 500ms cubic-bezier(1.000, 0.085, 0.640, 0.810); 
+        transition: transform 500ms cubic-bezier(1.000, 0.085, 0.640, 0.810); /* custom */
   overflow: scroll;
   z-index: 100;
   -webkit-box-shadow: 0 0 50px -10px #000000;
@@ -115,4 +115,40 @@
   cursor: pointer;
   transition: all 1s cubic-bezier(0.000, 0.000, 0.230, 1);
   background-position: 0%;
+}
+
+/*START MEDIA QUERIES*/
+
+@media screen and (min-width: 981px) and (max-width: 1154px) {
+  #loginModal {
+    width: 80vw;
+    margin-left: 10vw;
+  }
+}
+
+@media screen and (max-width: 980px) and (min-width: 769px) {
+  #loginModal {
+    width: 80vw;
+    margin-left: 10vw;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 641px) {
+  #loginModal {
+    width: 80vw;
+    margin-left: 10vw;
+  }
+  #closeX {
+    width: 25px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #loginModal {
+    width: 80vw;
+    margin-left: 10vw;
+  }
+  #closeX {
+    width: 25px;
+  }
 }

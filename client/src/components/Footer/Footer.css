@@ -70,6 +70,10 @@ img:hover {
 }
 
 @media screen and (max-width: 640px) {
+  #socialModal ul {
+    text-align: center;
+    padding: 0px;
+  }
   .socialIcons img {
     padding: 3% 1%;
   }

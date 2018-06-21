@@ -1,5 +1,4 @@
 .SignUpForm {
-	width: 95%;
 	height: auto;
 	display: block;
 	padding: 20px;
@@ -37,18 +36,13 @@
 
 .leftColumn {
 	position: relative;
-	display: inline-block;
 	top: 10%;
-	margin-left: 15%;
 	text-align: center;
 }
 
 .rightColumn {
 	position: relative;
-	display: inline-block;
-	float: right;
 	top: 10%;
-	margin-right: 15%;
 	text-align: center;
 }
 
@@ -97,17 +91,69 @@ label:focus,
 /*START MEDIA QUERIES*/
 
 @media screen and (min-width: 981px) {
-	
+	#signUpSubmit-button {
+		margin: 20px 0px;
+	}
+	.SignUpForm {
+		margin: auto;
+		padding: 0% 15%;
+	}
+	.leftColumn {
+		display: inline-block;
+	}
+	.rightColumn {
+		display: inline-block;
+		float: right;
+	}
 }
 
 @media screen and (max-width: 980px) and (min-width: 769px) {
-	
+	#signUpSubmit-button {
+		margin: 20px 0px;
+	}
+	.SignUpForm {
+		margin: auto;
+		padding: 0% 15%;
+	}
+	.leftColumn {
+		display: inline-block;
+	}
+	.rightColumn {
+		display: inline-block;
+		float: right;
+	}
 }
 
 @media screen and (max-width: 768px) and (min-width: 641px) {
-
+	.SignUpForm {
+		padding: 0px;
+	}
+	#signUpSubmit-button {
+		margin: 20px 0px;
+	}
+	.leftColumn {
+		margin: auto;
+	}
+	.rightColumn {
+		text-align: center;
+		margin: auto;
+		margin-top: 20px;
+	}
 }
 
 @media screen and (max-width: 640px) {
-	
+	.SignUpForm {
+		padding: 0px;
+	}
+	#signUpSubmit-button {
+		margin: 20px 0px;
+	}
+	.leftColumn {
+		margin: auto;
+	}
+	.rightColumn {
+		text-align: center;
+		margin: auto;
+		margin-top: 20px;
+	}
 }
