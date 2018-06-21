@@ -32,6 +32,7 @@ class Team extends Component {
 					</Fade>
 					</div>
 				</div>
+
 					<div className="teamContainer">
 						<Fade top>
 						<div id='container1'>
@@ -143,7 +144,101 @@ class Team extends Component {
 							</div>
 							</Fade>
 						</div>
-					</div>
+
+						<div className='queryContainer'>
+							<Fade bottom>
+							<div id='container1'>
+								<div id="robyn">
+									<div id='robynPic'>
+										<img src={Robyn} />
+									</div>
+									<div id='robynText'>
+										<span style={{ fontSize: '25px' }}>
+											Robyn Tsukayama
+										</span>
+											<br />
+										<span style={{ fontStyle: 'italic' }}>
+											Chief of Operations
+										</span>
+											<br />
+										<span style={{ width: '20%' }}>
+											Robyn is a diverse leader with experience in the automotive, consumer packaged goods, education, and social enterprise industries. She earned a B.S. in Mechanical Engineering from Kettering University, an MBA from Harvard Business School, and is a StartingBloc Fellow.
+										</span>
+									</div>
+								</div>
+							</div>
+							</Fade>
+							<Fade bottom>
+							<div id='container1'>
+								<div id="jamison">
+									<div id='jamisonPic'>
+										<img src={Jamison} />
+									</div>
+									<div id='jamisonText'>
+										<span style={{ fontSize: '25px' }}>
+											Jamison M Day, PhD.
+										</span>
+											<br />
+										<span style={{ fontStyle: 'italic', marginBottom: '50px' }}>
+											Consultant for Supply Chain Distribution
+										</span>
+											<br />
+										<span style={{ width: '20%' }}>
+											Jamison is a Distinguished Data Scientist at LookingGlass Cyber Solutions, Inc. He served on a Supply Chain Security Team for the U.S. Director of National Intelligence. Jamison earned his Ph.D in Decision Science from Indiana University, and B.S. in Business Process Management.
+										</span>
+									</div>
+								</div>
+							</div>
+							</Fade>
+							<Fade bottom>
+							<div id='container1'>
+								<div id="charlie">
+									<div id='charliePic'>
+										<img src={Charlie} />
+									</div>
+									<div id='charlieText'>
+										<span style={{ fontSize: '25px' }}>
+											Charlie Mayer
+										</span>
+											<br />
+										<span style={{ fontStyle: 'italic' }}>
+											Web Development
+										</span>
+											<br />
+										<span style={{ width: '20%' }}>
+										Charlie is a Full Stack Web Developer and web development teacher, whose expertise lies deepest in the MERN stack.  While developing in JavaScript and React is Charlie's happy place, he is versed in everything from CSS to PHP.
+										</span>
+									</div>
+								</div>
+							</div>
+							</Fade>
+							<Fade bottom>
+							<div id='container1'>
+								<div id="max">
+									<div id='maxPic'>
+										<img src={Max} />
+									</div>
+									<div id='maxText'>
+										<span style={{ fontSize: '25px' }}>
+											Maxwell Cutri
+										</span>
+											<br />
+										<span style={{ fontStyle: 'italic' }}>
+											Web Development
+										</span>
+											<br />
+										<span style={{ width: '20%' }}>
+											Maxwell is a Full Stack Web Developer with a passion for UX & UI.
+
+											While JavaScript, React.js, and CSS3 are his most practiced languages, he enjoys developing custom web applications and encorporating his skills with Adobe Creative Suite and vector drawing software.
+										</span>
+									</div>
+								</div>
+							</div>
+							</Fade>
+						</div>
+					</div>						
+
 					<div id="teamBackground">
 						<img src={textBack}/>
 					</div>
