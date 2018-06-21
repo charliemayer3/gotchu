@@ -40,12 +40,12 @@
 
 .socialIcons img {
   display: inline-block;
-  width: 4vh;
+  width: 7vh;
   padding: 1%;
   transition: all .15s cubic-bezier(0.000, 0.000, 0.230, 1);
 }
 
-img:hover {
+.socialIcons img:hover {
   cursor: pointer;
   -webkit-transform: scale(1.25); /* Safari */
   transform: scale(1.25);
@@ -54,18 +54,20 @@ img:hover {
 /*START MEDIA QUERIES*/
 
 @media screen and (min-width: 981px) {
-  
+  .socialIcons img {
+    padding: 15px 1%;
+  }
 }
 
 @media screen and (max-width: 980px) and (min-width: 769px) {
   .socialIcons img {
-    padding: 2% 1%;
+    padding: 10px 1%;
   }
 }
 
 @media screen and (max-width: 768px) and (min-width: 641px) {
   .socialIcons img {
-    padding: 2% 1%;
+    padding: 10px 1%;
   }
 }
 
@@ -75,6 +77,6 @@ img:hover {
     padding: 0px;
   }
   .socialIcons img {
-    padding: 3% 1%;
+    padding: 15px 1%;
   }
 }
