@@ -10,7 +10,7 @@ import SignUp from '../../pages/SignUp';
 import LoginCloseBtn from '../LoginCloseBtn';
 import X from '../../images/whiteX.png';
 import axios from 'axios';
-
+ 
 class LoginModal extends Component {
   constructor(props) {
     super(props);
@@ -65,7 +65,7 @@ class LoginModal extends Component {
           </span>
 
           {!this.state.signUp ? (
-            <Login login={this.props.login} />
+            <Login setUser={this.props.setUser} />
           ) : (
             <SignUp toggleToLogin={this.toLogin} />
           )}

@@ -134,7 +134,7 @@ class Menu extends Component {
           </Router>
         </OverlayMenu>
 
-        <LoginModal menuVisibility={this.state.visible} toggleLoginModal={this.toggleLoginModal} toggleBlack={this.toggleBlack} login={this.props.login} >
+        <LoginModal menuVisibility={this.state.visible} toggleLoginModal={this.toggleLoginModal} toggleBlack={this.toggleBlack} setUser={this.props.setUser} >
           
         </LoginModal>
 
