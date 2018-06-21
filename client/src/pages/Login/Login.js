@@ -52,7 +52,7 @@ class Login extends Component {
 	            loggedIn: true,
 	            user: response.data.user
 	          })
-	          this.props.setUser()
+	          this.props.setUser(response.data.user)
 	          console.log(response.data.user)
 	          window.location = '/user/'
 	        } else {
