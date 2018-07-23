@@ -77,58 +77,58 @@ class Menu extends Component {
         >
           <Router>
             <List>
-              <ListItem>
+
                <Link onClick={this.forceUpdate} to={"/"}>
                   Home
                 </Link>
-              </ListItem>
+
               <hr />
               
               {this.state.user ? (
                 <div>
-                  <ListItem>
+
                     <Link onClick={this.forceUpdate} to={"/user"}>
                       My Account
                     </Link>
-                  </ListItem>
+
                   <hr />
-                  <ListItem>
+
                     <Link onClick={this.handleSubmit} to={"/"}>
                       Log Out
                     </Link>
-                  </ListItem>
+
                 </div>
               ) : (
-                <ListItem>
+
                   <Link onClick={() => {this.setState({ visible: !this.state.visible, blackOverlay: true }) }} to={"/"}>
                     Login + <br /> &nbsp; Signup
                   </Link>
-                </ListItem>
+
               )}
                 <hr />
-              <ListItem>
+
                 <Link onClick={this.forceUpdate} to={"/about/"}>
                   About<br /> &nbsp; Us
                 </Link>
-              </ListItem>
+
                 <hr />
-              <ListItem>
+
                 <Link onClick={this.forceUpdate} to={"/crisis/"}>
                   The <br /> &nbsp; Crisis
                 </Link>
-              </ListItem>
+
                 <hr />
-              <ListItem>
+
                 <Link onClick={this.forceUpdate} to={"/mission/"}>
                   The <br /> &nbsp; Mission
                 </Link>
-              </ListItem>
+
                 <hr />
-              <ListItem>
+
                 <Link onClick={this.forceUpdate} to={"/team/"}>
                   The <br /> &nbsp; Team
                 </Link>
-              </ListItem>
+
                 <hr />
             </List>
           </Router>
