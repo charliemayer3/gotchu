@@ -17,19 +17,19 @@ class Mission extends Component {
 
 	render() {
 			return (
-				<div>
+				<div className="missionPage">
 					<div className="missionContainer">
-					<Fade left>
-						<h3 id='missionHeader'>
-							The Mission
-						</h3>
-					</Fade>
+						<Fade left>
+							<h3 id='missionHeader'>
+								The Mission
+							</h3>
+						</Fade>
 
-					<Fade right>
-					<h4 id='missionText'>
-						“Gotchu, the Blockchain based Giving Platform that localizes giving through our secure IoT technology.”
-					</h4>
-					</Fade>
+						<Fade right>
+						<h4 id='missionText'>
+							“Gotchu, the Blockchain based Giving Platform that localizes giving through our secure IoT technology.”
+						</h4>
+						</Fade>
 					</div>
 
 					<div class="ocean">

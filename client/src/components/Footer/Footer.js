@@ -48,28 +48,28 @@ class Footer extends Component {
         <div id="socialModal" className={visibility}>
           <div className="socialIcons">
             <Router>
-              <List>
-                <ListItem>
+                <div>
+
                   <Route>
                     <img onClick={() => this.openInNewTab('https://www.facebook.com/Gotchu-209986712951166/')} src={Facebook} />
                   </Route>
-                </ListItem>
-                <ListItem>
+
+
                   <Route>
                     <img onClick={() => this.openInNewTab('https://www.instagram.com/gotchu.world/')} src={Instagram} />
                   </Route>
-                </ListItem>
-                <ListItem>
+
+
                   <Route>
                     <img onClick={() => this.openInNewTab('https://twitter.com/GotchuW')} src={Twitter} />
                   </Route>
-                </ListItem>
-                <ListItem>
+
+
                   <a href={"mailto:" + this.state.email}>
                     <img src={Contact} />
                   </a>
-                </ListItem>
-              </List>
+                </div>
+
             </Router>
           </div>
 
