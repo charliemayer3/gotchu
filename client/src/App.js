@@ -14,8 +14,8 @@ import Crisis from './pages/Crisis';
 
 
 class App extends Component {
-    constructor() {
-    super()
+    constructor(props) {
+    super(props)
     this.state = {
       loggedIn: false,
       user: null,
@@ -23,7 +23,7 @@ class App extends Component {
       loginError: false
     }
     this._logout = this._logout.bind(this)
-    // this._login = this._login.bind(this)
+    this.setUser = this.setUser.bind(this)
   }
   componentDidMount() {
     axios.get('/auth/user').then(response => {
@@ -60,10 +60,12 @@ class App extends Component {
   }
 
   setUser(user) {
-    this.setState({
-      loggedIn: true,
-      user: user
-    })
+    if (user) {
+      this.setState({
+        loggedIn: true,
+        user: user
+      })
+    }
   }
 
   render() {
