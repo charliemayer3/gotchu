@@ -25,12 +25,17 @@
   padding: 1vh 0 0 0;
   -webkit-box-shadow: 0 0 30px -10px #000;
 	box-shadow: 0 0 30px -10px #000;
+  position: relative;
+  z-index: 10;
 }
 
 #teamBackground{
   z-index: -10;
   float: left;
   width: 100vw;
+  position: fixed;
+  left: 0;
+  bottom: -100vh;
 }
 
 .teamContainer {
@@ -55,12 +60,12 @@
   clear: both;
 }
 
-  #don {
+  #team-member {
     width: 50%;
     margin: auto;
   }
 
-  #don img {
+  #team-member img {
     width: 50%;
     -webkit-box-shadow: 0 10px 15px -5px #000;
   box-shadow: 0 10px 15px -5px #000;
