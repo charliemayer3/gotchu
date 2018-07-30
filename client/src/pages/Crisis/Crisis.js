@@ -20,7 +20,7 @@ class Crisis extends Component {
 			<div className='crisisBody'>  
 
 			<div className='crisisHeader'>
-					<div style={{ width: '75vw', margin: 'auto' }}>
+					<div style={{ width: '100vw', paddingLeft: '12vw', paddingRight: '12vw', margin: 'auto' }}>
 					<Fade left>
 							<h3 id="crisisHeaderText">
 								The Crisis
@@ -57,11 +57,6 @@ class Crisis extends Component {
 						</ul>
 					</Fade>
 					</h4>
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
 				</div>
 				{/* <div class="crisisOcean">
 					  <div class="crisisWave"></div>
